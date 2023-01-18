@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Montserrat', sans-serif;  
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #ffffff;
+  background-color: #040618;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.btn-1{
+  transition: all .4s ease;
+  @apply inline-flex h-[32px]  text-primary border border-primary rounded-[4px]  p-[8px];
+  @apply hover:bg-primary hover:text-[#040618] ;
+}
+
+.client-seen{
+  content: 'As seen on';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 24px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-weight: 600;
+  line-height: 15px;
+  font-size: 12px;
+}
+
+.bg-linear{
+  background: linear-gradient(360deg, #040618 0%, rgba(4, 6, 24, 0.384013) 51.27%, rgba(4, 6, 24, 0) 100%);
+}
+
+.btn2{
+  @apply min-w-[111px] mx-[5.5px] py-[11px] px-[9px] text-center border border-primary rounded-full transition-all font-normal text-[15px] leading-[18.29px];
+  @apply hover:bg-primary hover:text-primary hover:bg-opacity-[0.2]
+}
