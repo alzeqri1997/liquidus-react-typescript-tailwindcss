@@ -1,5 +1,6 @@
 import {useRef, useLayoutEffect, HtmlHTMLAttributes} from 'react'
 import './App.css'
+import BigText from './components/BigText'
 import Clients from './components/Clients'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -122,7 +123,8 @@ function App() {
     <div ref={app} className="App">
       <Header />
       <Hero />
-      <Clients/>
+      <Clients />
+      <BigText text='Crypto earning unlike any app you have used before' />
     </div>
   )
 }
