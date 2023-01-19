@@ -4,6 +4,8 @@ import BigText from './components/BigText'
 import Clients from './components/Clients'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import {gsap} from 'gsap'
+import MobileView from './components/MobileView'
 
 function App() {
   
@@ -125,6 +127,7 @@ function App() {
       <Hero />
       <Clients />
       <BigText text='Crypto earning unlike any app you have used before' />
+      <MobileView/>
     </div>
   )
 }
