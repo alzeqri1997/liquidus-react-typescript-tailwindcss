@@ -92,7 +92,14 @@ const Features = () => {
 				<FeatureIcon icon={index +1 } />
 			</div>
 			))}
-			
+			<div className="pb-[71px] pt-[224px] ">
+				<h1 className="text-[60px] font-medium leading-[73.14px]">
+					Earn up to <strong>100% APY,</strong>
+				</h1>
+				<h1 className="text-[60px] font-medium leading-[73.14px] text-end ">
+					hassle-free with <strong>one click.</strong>
+				</h1>
+			</div>
 		</section>
 	)
 }
