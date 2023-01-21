@@ -36,7 +36,7 @@ const MobileView = () => {
     return () => ctx.revert();
   }, [])
   return (
-    <section ref={mobileRef} className='mb-[557px] container relative' >
+    <section ref={mobileRef} className='mb-[236px] container relative' >
       <div className='' >
         <MobileViewImages mobileId={mobileId} timeline={tl} />
         <div className='max-w-[545px] mx-auto' >
