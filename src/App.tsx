@@ -7,6 +7,7 @@ import Hero from './components/Hero'
 import {gsap} from 'gsap'
 import MobileView from './components/MobileView'
 import Clouds from './components/Clouds'
+import Features from './components/Features'
 
 function App() {
   
@@ -130,6 +131,9 @@ function App() {
       <BigText text='Crypto earning unlike any app you have used before' />
       <MobileView />
       <Clouds />
+      <div className='bg-white text-dark' >
+        <Features/>
+      </div>
     </div>
   )
 }
