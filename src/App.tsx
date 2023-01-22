@@ -8,6 +8,7 @@ import {gsap} from 'gsap'
 import MobileView from './components/MobileView'
 import Clouds from './components/Clouds'
 import Features from './components/Features'
+import Advantages from './components/Advantages'
 
 function App() {
   
@@ -132,7 +133,8 @@ function App() {
       <MobileView />
       <Clouds />
       <div className='bg-white text-dark' >
-        <Features/>
+        <Features />
+        <Advantages />
       </div>
     </div>
   )
