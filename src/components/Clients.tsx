@@ -32,10 +32,10 @@ const Clients = () => {
           stagger: .2
         } ,"-=.3").fromTo('.client-seen', {
           opacity: 0,
-          y: 100
+          yPercent: 100,
         }, {
           opacity: 1,
-          y:"-50%"
+          yPercent: -0
         }, "-=.5")
     }, clientRef)
 

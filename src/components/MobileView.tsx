@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import bnbBtc from '../assets/icons/BNB-BTC.svg';
 import cloudLg from '../assets/icons/cloud-lg.svg';
 import cloudSm from '../assets/icons/cloud-sm.svg';
-import cloud from '../assets/icons/cloud.svg';
 import cro from '../assets/icons/CRO.svg';
 import eth2 from '../assets/icons/ETH-2.svg';
 import usdt from '../assets/icons/USDT.svg';
