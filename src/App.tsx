@@ -9,6 +9,7 @@ import MobileView from './components/MobileView'
 import Clouds from './components/Clouds'
 import Features from './components/Features'
 import Advantages from './components/Advantages'
+import Clients2 from './components/Clients2'
 
 function App() {
   
@@ -135,6 +136,7 @@ function App() {
       <div className='bg-white text-dark' >
         <Features />
         <Advantages />
+        <Clients2/>
       </div>
     </div>
   )
