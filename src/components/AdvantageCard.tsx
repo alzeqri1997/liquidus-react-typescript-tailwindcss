@@ -82,11 +82,11 @@ const AdvantageCard = ({ heading, body, link = true, componentClass = " " }: Pro
 						y2="69.5266"
 						gradientUnits="userSpaceOnUse"
 					>
-						<stop stop-color="#17E7D6" />
+						<stop stopColor="#17E7D6" />
 						<stop
 							offset="1"
-							stop-color="#17E7D6"
-							stop-opacity="0"
+							stopColor="#17E7D6"
+							stopOpacity="0"
 						/>
 					</linearGradient>
 				</defs>
@@ -102,8 +102,8 @@ const AdvantageCard = ({ heading, body, link = true, componentClass = " " }: Pro
 				>
 					<circle cx="10" cy="10" r="10" fill="#040618" />
 					<path
-						fill-rule="evenodd"
-						clip-rule="evenodd"
+						fillRule="evenodd"
+						clipRule="evenodd"
 						d="M8.6252 11.9968L6.31517 9.88322L5 11.3201L8.68484 14.6918L15 8.37668L13.6233 7L8.6252 11.9968Z"
 						fill="white"
 					/>
