@@ -84,7 +84,7 @@ const Features = () => {
 					<p className=" text-[24px] opacity-50 leading-[30px] py-[24px] " >
 						{data.content}
 					</p>
-					<a href={data.href.link} className="inline-flex text-[#9AA6CF] items-center  p-[8px] border rounded border-[#9AA6CF] " >
+					<a href={data.href.link} className="btn-2" >
 						<span className="mr-[4px]" > {data.href.title} </span>
 						<Arrow />
 					</a>

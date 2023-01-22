@@ -31,8 +31,11 @@ body{
   @apply hover:bg-primary hover:text-[#040618] ;
 }
 
+.btn-2{
+  @apply inline-flex text-[#9AA6CF] items-center  p-[8px] border rounded border-[#9AA6CF];
+}
+
 .client-seen{
-  content: 'As seen on';
   position: absolute;
   top: 100%;
   left: 50%;
