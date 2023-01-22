@@ -10,6 +10,7 @@ import Clouds from './components/Clouds'
 import Features from './components/Features'
 import Advantages from './components/Advantages'
 import Clients2 from './components/Clients2'
+import SecurityRating from './components/SecurityRating'
 
 function App() {
   
@@ -136,7 +137,8 @@ function App() {
       <div className='bg-white text-dark' >
         <Features />
         <Advantages />
-        <Clients2/>
+        <Clients2 />
+        <SecurityRating/>
       </div>
     </div>
   )
