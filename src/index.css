@@ -56,3 +56,11 @@ body{
   @apply min-w-[111px] mx-[5.5px] py-[11px] px-[9px] text-center border border-primary rounded-full transition-all font-normal text-[15px] leading-[18.29px];
   @apply hover:bg-primary hover:text-primary hover:bg-opacity-[0.2]
 }
+
+
+.first-slider-container, .second-slider-container {
+  @apply w-full overflow-hidden;
+}
+.second-slider-container {
+  @apply absolute top-0;
+}
