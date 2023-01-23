@@ -222,10 +222,6 @@ const SecurityRating = () => {
             Project <br />Exposits
           </Explanation>
         </div>
-
-        <div>
-          <h1>22/100</h1>
-        </div>
       </div>
     </section>
   )
