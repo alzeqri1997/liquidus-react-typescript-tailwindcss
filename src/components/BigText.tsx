@@ -8,7 +8,6 @@ type propTypes = {
 
 const BigText = ({ text } : propTypes) => {
 
-  gsap.registerPlugin(ScrollTrigger);
   const bigTextOverlayRef = useRef<HTMLDivElement>(null);
   // const bigTextContentRef = useRef()
 

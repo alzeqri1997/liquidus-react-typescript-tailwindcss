@@ -4,17 +4,20 @@ import BigText from './components/BigText'
 import Clients from './components/Clients'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import {gsap} from 'gsap'
+import { gsap } from 'gsap'
 import MobileView from './components/MobileView'
 import Clouds from './components/Clouds'
 import Features from './components/Features'
 import Advantages from './components/Advantages'
 import Clients2 from './components/Clients2'
 import SecurityRating from './components/SecurityRating'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 function App() {
-  
+
   const app = useRef<HTMLDivElement>(null)
+
+  gsap.registerPlugin(ScrollTrigger);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
