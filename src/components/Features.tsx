@@ -68,10 +68,10 @@ const Features = () => {
 		<section className="container pt-[179px]">
 			<div className="pb-[197px]">
 				<h1 className="text-[60px] font-medium leading-[73.14px]">
-					Earn up to <strong>100% APY,</strong>
+				We take your  <strong>Security</strong>
 				</h1>
 				<h1 className="text-[60px] font-medium leading-[73.14px] text-end ">
-					hassle-free with <strong>one click.</strong>
+				very seriously at  <strong>Liquidus</strong>
 				</h1>
 			</div>
 
