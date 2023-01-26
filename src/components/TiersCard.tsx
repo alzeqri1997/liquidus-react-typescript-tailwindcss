@@ -74,8 +74,10 @@ const TiersCard = ({ currentCard }: propTypes) => {
 
   const tiersCardRef = useRef<HTMLDivElement>(null)
   useLayoutEffect(() => {
-    gsap.from(tiersCardRef.current, {
+    gsap.fromTo(tiersCardRef.current, {
       opacity: 0,
+    }, {
+      opacity:1
     })
   }, [currentCard])
   return (
