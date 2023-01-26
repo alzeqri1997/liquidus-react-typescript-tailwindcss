@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react'
 import tiersTableImage from '../assets/images/TiersTable.png'
+import {gsap} from 'gsap'
 
 type PropTypes = {
   handleClick? : () => void
@@ -22,13 +24,40 @@ const Close = ({handleClick} : PropTypes) => (
   </svg>
 )
 
+
+
+
 const TiersTable = ({setShowTiersModal} : TiersTablePropTypes) => {
+  const modalContainer = useRef(null);
+  const table = useRef(null)
+
+
+
+useEffect(() => {
+  gsap.set(modalContainer.current,{
+    opacity:1,
+  });
+  gsap.to( table.current,{
+    scale:1
+  })
+
+}, [])
+
+
   function closeModal() {
-    setShowTiersModal(false)
+    gsap.to(modalContainer.current,{
+      opacity:0
+    });
+    gsap.to(table.current , {
+      scale:0,
+      onComplete: function(){
+        setShowTiersModal(false)
+      }
+    });
   }
     return (
-      <div className=' fixed top-0 left-0 grid place-content-center z-[100000] bg-secondary bg-opacity-25 w-screen h-screen   ' >
-        <div className='min-w-[887px] relative bg-white text-center px-[20px] py-[40px] rounded-[20px]' >
+      <div onClick={closeModal} ref={modalContainer} className=' fixed opacity-0 top-0 left-0 grid place-content-center z-[100000] bg-secondary bg-opacity-25 w-screen h-screen   ' >
+        <div ref={table} className='min-w-[887px] scale-0 relative bg-white text-center px-[20px] py-[40px] rounded-[20px]' >
           <Close handleClick={closeModal}  />
           <h1 className='text-dark opacity-50 font-semibold text-[42px] leading-[51.2px] mb-[20px]  ' >Premium Tiers Table</h1>
           <img className='mx-auto max-w-[500px]' src={tiersTableImage} alt="premium tiers table" />
