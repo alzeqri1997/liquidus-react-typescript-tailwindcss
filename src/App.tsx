@@ -13,6 +13,8 @@ import Clients2 from './components/Clients2'
 import SecurityRating from './components/SecurityRating'
 import Tiers from './components/Tiers'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import Clouds2 from './components/Clouds2'
+import Cards from './components/Cards'
 
 function App() {
 
@@ -138,13 +140,16 @@ function App() {
       <BigText text='Crypto earning unlike any app you have used before' />
       <MobileView />
       <Clouds />
-      <div className='bg-white text-dark' >
+      <div className='bg-white text-dark mb-[329px]' >
         <Features />
         <Advantages />
         <Clients2 />
         <SecurityRating />
         <Tiers />
+        <Clouds2 />
       </div>
+      <BigText text='Greek Gods might be a myth...' />
+      <Cards/>
     </div>
   )
 }
