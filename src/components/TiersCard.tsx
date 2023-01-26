@@ -66,13 +66,20 @@ const tiersCardData: TiersCardDataType[] = [
 ]
 
 type propTypes = {
-  currentCard: number
+  currentCard: number,
+  setShowTiersModal: (value: boolean)=> void
 }
 
-const TiersCard = ({ currentCard }: propTypes) => {
-
+const TiersCard = ({ currentCard, setShowTiersModal }: propTypes) => {
 
   const tiersCardRef = useRef<HTMLDivElement>(null)
+  
+  function handleShowModalClick() {
+    setShowTiersModal(true)
+  }
+
+
+
   useLayoutEffect(() => {
     gsap.fromTo(tiersCardRef.current, {
       opacity: 0,
@@ -121,7 +128,7 @@ const TiersCard = ({ currentCard }: propTypes) => {
                 </svg>) : null}
               </div>
             ))}
-            <button className='border border-secondary rounded-[8px] py-[15px] w-full text-center mt-[30px] font-semibold leading-[19.5px]' >
+            <button onClick={handleShowModalClick} className='border border-secondary rounded-[8px] py-[15px] w-full text-center mt-[30px] font-semibold leading-[19.5px]' >
               View all premium tiers
             </button>
           </div>

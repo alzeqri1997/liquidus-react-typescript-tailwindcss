@@ -6,6 +6,7 @@ import gold from '../assets/icons/tier/Gold.svg'
 import silver from '../assets/icons/tier/Silver.svg'
 import superior from '../assets/icons/tier/Superior.svg'
 import { gsap } from 'gsap'
+import TiersTable from './TiersTable'
 
 type currentCardType = 0 | 1 | 2 | 3
 
@@ -120,7 +121,9 @@ const Tiers = () => {
   }
   const cardIds = [0, 1, 2, 3];
   const [currentCard, setCurrentCard] = useState<currentCardType>(0)
+  const [showTiersModal, setShowTiersModal] = useState(false)
   return (
+    <>
     <section ref={tiersRef} className='container pt-[107px] pb-[400px] relative' >
       <div className="heading-container pb-[197px]">
         <h1 className="text-[60px] font-medium leading-[73.14px]">
@@ -133,7 +136,7 @@ const Tiers = () => {
 
 
       <div className='relative tiers-card-container'>
-        <TiersCard currentCard={currentCard} />
+        <TiersCard setShowTiersModal={setShowTiersModal}   currentCard={currentCard} />
         <div className='flex flex-row-reverse justify-center mt-[20px] ' >
           {cardIds.map((id: number) => (
             <button key={id} onClick={() =>handleClick(id as currentCardType)} >
@@ -149,7 +152,9 @@ const Tiers = () => {
         <img onClick={() => handleClick(2)} className='tier-icon sliver absolute top-[-10%] left-[15%] w-[102px] rotate-[11.13deg]  cursor-pointer' src={silver} alt=" silver" />
         <img onClick={() => handleClick(3)} className='tier-icon bronze absolute top-[65.9%] left-[13%] w-[99px] rotate-[-16.44deg]  cursor-pointer' src={bronze} alt=" bronze" />
       </div>
-    </section>
+      </section>
+      {showTiersModal && <TiersTable setShowTiersModal={setShowTiersModal}  />}
+      </>
   )
 }
 
