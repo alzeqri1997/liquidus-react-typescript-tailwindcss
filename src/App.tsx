@@ -15,6 +15,7 @@ import Tiers from './components/Tiers'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Clouds2 from './components/Clouds2'
 import Cards from './components/Cards'
+import Offers from './components/Offers'
 
 function App() {
 
@@ -149,7 +150,11 @@ function App() {
         <Clouds2 />
       </div>
       <BigText text='Greek Gods might be a myth...' />
-      <Cards/>
+      <Cards />
+      <div className='bg-white text-dark' >
+
+      <Offers/>
+      </div>
     </div>
   )
 }
