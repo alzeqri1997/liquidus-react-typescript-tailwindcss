@@ -16,6 +16,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Clouds2 from './components/Clouds2'
 import Cards from './components/Cards'
 import Offers from './components/Offers'
+import FAQ from './components/FAQ'
 
 function App() {
 
@@ -152,8 +153,8 @@ function App() {
       <BigText text='Greek Gods might be a myth...' />
       <Cards />
       <div className='bg-white text-dark' >
-
-      <Offers/>
+        <Offers />
+        <FAQ/>
       </div>
     </div>
   )
