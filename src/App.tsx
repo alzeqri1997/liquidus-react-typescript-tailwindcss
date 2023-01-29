@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, HtmlHTMLAttributes } from 'react'
+import { useRef, useLayoutEffect } from 'react'
 import './App.css'
 import BigText from './components/BigText'
 import Clients from './components/Clients'
@@ -17,6 +17,8 @@ import Clouds2 from './components/Clouds2'
 import Cards from './components/Cards'
 import Offers from './components/Offers'
 import FAQ from './components/FAQ'
+import DownloadApp from './components/DownloadApp'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -154,8 +156,10 @@ function App() {
       <Cards />
       <div className='bg-white text-dark' >
         <Offers />
-        <FAQ/>
+        <FAQ />
+        <DownloadApp/>
       </div>
+      <Footer/>
     </div>
   )
 }
