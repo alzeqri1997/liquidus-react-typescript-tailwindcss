@@ -7,7 +7,7 @@ import { gsap } from 'gsap'
 
 
 const Clients = () => {
-  const clientRef = useRef<any>()
+  const clientRef = useRef<HTMLDivElement>(null)
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.timeline({
@@ -32,22 +32,22 @@ const Clients = () => {
           stagger: .2
         } ,"-=.3").fromTo('.client-seen', {
           opacity: 0,
-          yPercent: 100,
         }, {
           opacity: 1,
-          yPercent: -0
         }, "-=.5")
     }, clientRef)
 
     return () => ctx.revert()
   }, [])
   return (
-    <section ref={clientRef} className='clients relative mt-[461px] mb-[135px] flex items-center gap-[112px] p-[20px] bg-white bg-opacity-5 w-fit mx-auto rounded-[20px] ' >
-      <img className='w-[70px] h-[56px]' src={foxNews} alt="fox news" />
-      <img className='w-[92px] h-[45px]' src={cnn} alt="cnn news" />
-      <img className='w-[201px] h-[38px]' src={theCointelegraph} alt="the-cointelegraph news" />
-      <img className='w-[92px] h-[92px]' src={bscNews} alt="bsc news" />
-      <span className='client-seen' > as seen on  </span>
+    <section className=' px-[30px] ' >
+      <div ref={clientRef} className='clients relative mt-[461px] max-lg:mt-[200px] max-mg:mb-[150px] max-sm:mb-[70px] mb-[135px] flex items-center flex-wrap  gap-[112px] max-lg:gap-[60px] max-md:gap-[30px] max-md:justify-center p-[20px] bg-white bg-opacity-5 w-fit mx-auto rounded-[20px]' >
+        <img className='w-[70px] h-[56px]' src={foxNews} alt="fox news" />
+        <img className='w-[92px] h-[45px]' src={cnn} alt="cnn news" />
+        <img className='w-[201px] h-[38px]' src={theCointelegraph} alt="the-cointelegraph news" />
+        <img className='w-[92px] h-[92px]' src={bscNews} alt="bsc news" />
+        <span className='client-seen' > as seen on  </span>
+      </div>
     </section>
   )
 }
