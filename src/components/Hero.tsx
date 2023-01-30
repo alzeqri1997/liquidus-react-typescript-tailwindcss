@@ -9,25 +9,25 @@ import cloud from '../assets/icons/cloud.svg'
 const Hero = () => {
   return (
     <section className='container' >
-      <div className='flex relative' >
-        <div className='hero-left'>
-          <h1 className='text-[70px] leading-[85.33px] ' >
+      <div className='flex max-lg:flex-col-reverse relative' >
+        <div className='hero-left relative z-50 max-lg:mb-[40px]'>
+          <h1 className='text-[70px] max-sm:text-[44px] leading-[85.33px] max-sm:leading-[56px] ' >
             Liquidus helps you <br />
             <strong>earn with DeFi</strong>
           </h1>
-          <p className='opacity-50 font-normal leading-[36.57px] text-[30px] mb-[61px] mt-[30px]' >
+          <p className='opacity-50 font-normal leading-[36.57px] max-sm:leading-[26px] text-[30px] max-sm:text-[20px] mb-[61px] mt-[30px]' >
             The best DeFi has to offer aggregated <br />
             into a single app, invest into your <br />
             favorite farms with one click</p>
-          <div className='flex cta' >
-            <a href="#" className=' btn-1 items-center mr-[8px]'>
+          <div className='flex cta flex-wrap gap-[8px]' >
+            <a href="#" className=' btn-1 items-center'>
               <span className='mr-[4px] font-semibold text-[12px] leading-[14.63px]' >Start earning today</span>
-              <svg className='mlr-[4px]' width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className='ml-[4px] mt-[3px]' width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.733398 3.94065L9.0297 3.94065" stroke="currentColor" strokeLinecap="round" />
                 <path d="M6.6582 1.3335L9.26643 3.9409L6.6582 6.54831" stroke="currentColor" strokeLinecap="round" />
               </svg>
             </a>
-            <a href="#" className='btn-1 items-end mr-[8px]'>
+            <a href="#" className='btn-1 items-end'>
               <svg className='mr-[4px]' width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.1077 5.4544C13.0112 5.5264 11.3081 6.4496 11.3081 8.5024C11.3081 10.8768 13.4753 11.7168 13.5401 11.7376C13.5301 11.7888 13.1958 12.888 12.3975 14.008C11.6857 14.9936 10.9422 15.9776 9.81123 15.9776C8.68025 15.9776 8.38919 15.3456 7.08358 15.3456C5.81123 15.3456 5.35884 15.9984 4.32432 15.9984C3.28981 15.9984 2.56798 15.0864 1.73805 13.9664C0.776715 12.6512 0 10.608 0 8.6688C0 5.5584 2.10229 3.9088 4.17131 3.9088C5.27069 3.9088 6.18711 4.6032 6.87734 4.6032C7.5343 4.6032 8.55884 3.8672 9.80956 3.8672C10.2836 3.8672 11.9867 3.9088 13.1077 5.4544ZM9.2158 2.5504C9.73306 1.96 10.099 1.1408 10.099 0.3216C10.099 0.208 10.089 0.0928 10.0674 0C9.22578 0.0304 8.22453 0.5392 7.62079 1.2128C7.14678 1.7312 6.70437 2.5504 6.70437 3.3808C6.70437 3.5056 6.72599 3.6304 6.73597 3.6704C6.78919 3.68 6.87568 3.6912 6.96216 3.6912C7.71726 3.6912 8.66694 3.2048 9.2158 2.5504Z" fill="currentColor" />
               </svg>
@@ -51,19 +51,20 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <div className='hero-right' >
-          <img className='hero-image z-10 absolute top-[30px] right-[80px]' src={heroImage} alt="hero bitcoin" />
-          <img className='eth absolute top-[0] right-[340px]' src={eth} alt="" />
-          <img className='btc absolute right-[390px] top-[133px] ' src={btc} alt="" />
-          <img className='ethliq absolute top-[150px] right-[-80px] ' src={ethLiq} alt="" />
-          <img className='bnb absolute bottom-[20px] right-[-110px] ' src={bnb} alt="BNB" />
-          <svg className='absolute bottom-0 left-[450px] z-20' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <div className='hero-right  max-lg:relative' >
+          <img className='hero-image absolute max-lg:relative z-10 top-[30px] right-[80px] max-xl:right-[0] max-sm:w-[80%]' src={heroImage} alt="hero bitcoin" />
+          <img className='eth absolute top-[0] right-[340px] max-xl:top-[-40px] max-lg:top-[0] max-lg:right-[500px] max-md:hidden' src={eth} alt="" />
+          <img className='btc absolute right-[390px] top-[133px] max-xl:right-[290px]  max-lg:right-[490px] max-lg:top-[133px] max-md:hidden' src={btc} alt="" />
+          <img className='ethliq absolute top-[150px] right-[-80px] max-xl:right-[-120px] max-lg:right-[0] max-lg:top-[103px] max-md:hidden ' src={ethLiq} alt="" />
+          <img className='bnb absolute bottom-[20px] right-[-110px] max-lg:bottom-[433px] max-lg:right-[33px] max-md:hidden ' src={bnb} alt="BNB" />
+          <svg className='absolute bottom-0 left-[450px] z-20 max-lg:bottom-[100%]' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.2" d="M5.5 11C8.53757 11 11 8.53757 11 5.5C11 2.46243 8.53757 0 5.5 0C2.46243 0 0 2.46243 0 5.5C0 8.53757 2.46243 11 5.5 11Z" fill="#17E7D6" />
           </svg>
-          <svg className='absolute bottom-[-200px] left-[200px]' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='absolute bottom-[-200px] left-[200px] max-lg:bottom-[70%] max-lg:left-[150px]' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.2" d="M5.5 11C8.53757 11 11 8.53757 11 5.5C11 2.46243 8.53757 0 5.5 0C2.46243 0 0 2.46243 0 5.5C0 8.53757 2.46243 11 5.5 11Z" fill="#17E7D6" />
           </svg>
-          <svg className='absolute bottom-[-230px] right-[100px]' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='absolute bottom-[-230px] right-[100px] max-lg:bottom-[300px]' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.62 19.24C14.933 19.24 19.24 14.933 19.24 9.62C19.24 4.30702 14.933 0 9.62 0C4.30702 0 0 4.30702 0 9.62C0 14.933 4.30702 19.24 9.62 19.24Z" fill="#17E7D6" />
           </svg>
 
