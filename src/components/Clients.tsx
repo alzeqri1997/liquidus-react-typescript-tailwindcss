@@ -40,8 +40,8 @@ const Clients = () => {
     return () => ctx.revert()
   }, [])
   return (
-    <section className=' px-[30px] ' >
-      <div ref={clientRef} className='clients relative mt-[461px] max-lg:mt-[200px] max-mg:mb-[150px] max-sm:mb-[70px] mb-[135px] flex items-center flex-wrap  gap-[112px] max-lg:gap-[60px] max-md:gap-[30px] max-md:justify-center p-[20px] bg-white bg-opacity-5 w-fit mx-auto rounded-[20px]' >
+    <section className=' px-[30px] mt-[461px] max-lg:mt-[200px] max-mg:mb-[150px] mb-[180px]' >
+      <div ref={clientRef} className='clients relative  max-sm:mb-[70px]  flex items-center flex-wrap  gap-[112px] max-lg:gap-[60px] max-md:gap-[30px] max-md:justify-center p-[20px] bg-white bg-opacity-5 w-fit mx-auto rounded-[20px]' >
         <img className='w-[70px] h-[56px]' src={foxNews} alt="fox news" />
         <img className='w-[92px] h-[45px]' src={cnn} alt="cnn news" />
         <img className='w-[201px] h-[38px]' src={theCointelegraph} alt="the-cointelegraph news" />
