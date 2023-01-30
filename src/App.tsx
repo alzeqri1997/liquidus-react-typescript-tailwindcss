@@ -41,7 +41,7 @@ function App() {
           opacity: 0,
           x: 100,
         }, {
-          opacity: 1,
+          opacity: 50,
           x: 0,
           stagger: .3,
           delay: .6,
@@ -58,7 +58,7 @@ function App() {
           opacity: 0,
           x: -50,
         }, {
-          opacity: 1,
+          opacity: .5,
           x: 0,
           stagger: .1
         }, "-=.5")
