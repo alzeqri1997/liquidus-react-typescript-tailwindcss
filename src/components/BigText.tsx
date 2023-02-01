@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 type propTypes = {
   text: string
@@ -11,16 +12,21 @@ const BigText = ({ text } : propTypes) => {
   const bigTextContainer = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
-    gsap.to(bigTextOverlayRef.current, {
-      scrollTrigger: {
-        trigger: bigTextContainer.current,
-        scrub: true,
-        start: ' 80% 80%',
-        end: 'bottom 20%',
-        toggleActions: 'play pause reverse reset'
-      },
-      yPercent: 100,
-    })
+    const ctx = gsap.context(() => {
+      gsap.to(bigTextOverlayRef.current, {
+        scrollTrigger: {
+          trigger: bigTextContainer.current,
+          scrub: true,
+          start: ' 80% 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play pause reverse reset',
+        },
+        yPercent: 100,
+      })
+      
+    },bigTextContainer)
+
+    return ()=> ctx.revert()
   }, [])
 
 
