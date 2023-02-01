@@ -6,28 +6,29 @@ import logo from '../assets/logo.svg'
 const mobileTl = gsap.timeline({ paused: true, reversed: true });
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
-  const mobileMenu = useRef<HTMLDivElement>(null)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
-    console.log('life is really simple')
-    const elements = mobileMenu.current?.querySelectorAll('div');
-    
-    mobileTl.fromTo(mobileMenu.current, {
-      opacity: 0,
-    }, {
-      opacity: 1,
-    }).fromTo(elements as any , {
-      x: 100,
-      opacity:0
-    }, {
-      x: 0,
-      opacity: 1,
-      stagger: .3
-    })
+    const ctx = gsap.context(() => {
+      const elements = gsap.utils.toArray(mobileMenuRef.current?.querySelectorAll('div') as NodeList);
+      mobileTl.fromTo(mobileMenuRef.current, {
+        opacity: 0,
+      }, {
+        opacity: 1,
+      }).fromTo(elements, {
+        x: 100,
+        opacity: 0
+      }, {
+        x: 0,
+        opacity: 1,
+        stagger: .1
+      })
+    }, mobileMenuRef);
+    return () => ctx.revert()
   },[])
 
   const handleMobileMenu = ()=> {
-    // setShowMobileMenu((prev) => !prev);
+    setShowMobileMenu((prev) => !prev);
     mobileTl.reversed() ? mobileTl.play() : mobileTl.reverse()
   }
   return (
@@ -97,7 +98,9 @@ const Header = () => {
             </div>
           </button>
         </div>
-        <div ref={mobileMenu} className={` mobile-menu py-[20px] absolute bg-dark z-[1000] w-full ${showMobileMenu ? 'open-menu' : ''} `}>
+
+
+        <div ref={mobileMenuRef} className={` mobile-menu  py-[20px] absolute bg-dark z-[1000] w-full ${showMobileMenu ? 'open-menu' : ''} `}>
           <div className='flex gap-[10px]' >
             <a href="">
               <svg className='mx-[10px] w-[20px] transition-colors text-[#9AA6CF] hover:text-white ' width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
