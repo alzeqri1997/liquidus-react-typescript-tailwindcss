@@ -29,7 +29,7 @@ const Clients = () => {
         }, {
           x: 0,
           opacity: 1,
-          stagger: .2
+          stagger: .1
         } ,"-=.3").fromTo('.client-seen', {
           opacity: 0,
         }, {
