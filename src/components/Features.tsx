@@ -15,12 +15,12 @@ const Arrow = () => (
 	>
 		<path
 			d="M3.7334 7.94065L12.0297 7.94065"
-			stroke="#9AA6CF"
+			stroke="currentColor"
 			strokeLinecap="round"
 		/>
 		<path
 			d="M9.6582 5.33325L12.2664 7.94066L9.6582 10.5481"
-			stroke="#9AA6CF"
+			stroke="currentColor"
 			strokeLinecap="round"
 		/>
 	</svg>
