@@ -1,6 +1,8 @@
-/** @format */
+import { useRef, useLayoutEffect } from "react";
+import { gsap } from 'gsap';
+import FeatureIcon from "./icons/FeatureIcon";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
-import FeatureIcon from "./icons/FeatureIcon"
 
 
 const Arrow = () => (
@@ -64,27 +66,130 @@ const Features = () => {
 			}
 		},
 	]
+
+	const featuresContainerRef = useRef<HTMLDivElement>(null)
+
+	useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: '.heading-container',
+					start:'top center'
+				}
+			}).fromTo('.heading-1', {
+				opacity: 0,
+				x:-100
+			}, {
+				opacity: 1,
+				x:0
+			}).fromTo('.heading-2', {
+				opacity: 0,
+				x:100
+			}, {
+				opacity: 1,
+				x:0
+			},"-=.3")
+			const featureContainer: Array<HTMLDivElement> = gsap.utils.toArray('.feature-container')
+	
+			featureContainer.forEach((feature) => {
+				
+				gsap.timeline({
+					defaults: {
+						duration:.7
+					},
+					scrollTrigger:{
+						trigger:feature,
+						start: 'top center',
+					}
+				}).fromTo(feature.querySelector('.feature-heading'),{
+					opacity: 0,
+					x:-100
+				},{
+					opacity: 1,
+					x:0
+				}).fromTo(feature.querySelector('.feature-body'),{
+					opacity: 0,
+					x:-100
+				},{
+					opacity: 1,
+					x:0
+				},"-=.6").fromTo(feature.querySelector('.feature-btn'),{
+					opacity: 0,
+					x:-100
+				},{
+					opacity: 1,
+					x:0
+				},"-=.5").fromTo(feature.querySelector('.feature-icon'),{
+					opacity: 0,
+				},{
+					opacity: 1,
+				},"<").fromTo(feature.querySelectorAll('.feature-icon img'),{
+					opacity: 0,
+					y:"random([50,100,150])"
+				},{
+					opacity: 1,
+					y:0,
+					stagger:.1
+				},"-=1").fromTo(feature.querySelectorAll('.feature-icon svg path'),{
+					scale: 0,
+				},{
+					scale: 1,  
+					stagger: .1,
+				},"<")
+			})
+
+
+			gsap.timeline({
+				defaults: {
+					duration:.7
+				},
+				scrollTrigger: {
+					trigger: '.heading1',
+					start: 'top 70%',
+				}
+			}).fromTo('.heading1', {
+				opacity: 0,
+				x:-100
+			}, {
+				opacity: 1,
+				x:0
+			}).fromTo('.heading2', {
+				opacity: 0,
+				x:100
+			}, {
+				opacity: 1,
+				x:0
+			},"-=.5")
+		}, featuresContainerRef)
+		
+
+
+
+
+    return () => ctx.revert()
+
+  }, [])
 	return (
-		<section className="container pt-[179px]">
-			<div className="pb-[197px]">
-				<h1 className="text-[60px] font-medium leading-[73.14px]">
+		<section ref={featuresContainerRef} className="container pt-[179px]">
+			<div className="heading-container pb-[197px]">
+				<h1 className="heading-1 text-[60px] font-medium leading-[73.14px] max-lg:text-center">
 				We take your  <strong>Security</strong>
 				</h1>
-				<h1 className="text-[60px] font-medium leading-[73.14px] text-end ">
+				<h1 className="heading-2 text-[60px] font-medium leading-[73.14px] text-end max-lg:text-center">
 				very seriously at  <strong>Liquidus</strong>
 				</h1>
 			</div>
 
 			{FeaturesData.map((data, index) => (
-				<div key={index} className={`flex items-center gap-[81px] relative ${ FeaturesData.length >index +1 ? 'mb-[180px]' : '' } ${index % 2 ===1 ? 'flex-row-reverse' : ""}  `}>
-				<div className="max-w-[556px]" >
-					<h1 className=" font-bold text-[40px] leading-[48.76px] " >
+				<div key={index} className={`feature-container flex max-lg:flex-col-reverse items-center gap-[81px] relative ${ FeaturesData.length >index +1 ? 'mb-[180px]' : '' } ${index % 2 ===1 ? 'flex-row-reverse' : ""}  `}>
+				<div className=" w-[50%]" >
+					<h1 className="feature-heading font-bold text-[40px] leading-[48.76px] " >
 						{data.heading}
 					</h1>
-					<p className=" text-[24px] opacity-50 leading-[30px] py-[24px] " >
+					<p className="feature-body text-[24px] opacity-50 leading-[30px] py-[24px] " >
 						{data.content}
 					</p>
-					<a href={data.href.link} className="btn-2" >
+					<a href={data.href.link} className="feature-btn btn-2" >
 						<span className="mr-[4px]" > {data.href.title} </span>
 						<Arrow />
 					</a>
@@ -93,10 +198,10 @@ const Features = () => {
 			</div>
 			))}
 			<div className="pb-[71px] pt-[224px] ">
-				<h1 className="text-[60px] font-medium leading-[73.14px]">
+				<h1 className="heading1 text-[60px] font-medium leading-[73.14px] max-lg:text-center">
 					Earn up to <strong>100% APY,</strong>
 				</h1>
-				<h1 className="text-[60px] font-medium leading-[73.14px] text-end ">
+				<h1 className="heading2 text-[60px] font-medium leading-[73.14px] text-end max-lg:text-center ">
 					hassle-free with <strong>one click.</strong>
 				</h1>
 			</div>
