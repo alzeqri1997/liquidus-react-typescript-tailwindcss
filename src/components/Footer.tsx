@@ -4,16 +4,16 @@ import logo from '../assets/logo.svg'
 const Footer = () => {
   return (
     <footer className='relative z-50 bg-dark' >
-      <div className='max-w-[1267px] pt-[63px] pb-[21px] mx-auto ' >
-        <div className='flex justify-between items-center' >
-          <div className='flex' >
-            <div>
+      <div className='max-w-[1267px] px-[30px] pt-[63px] pb-[21px] mx-auto ' >
+        <div className='flex flex-wrap gap-14  justify-between max-lg:justify-center items-center' >
+          <div className='flex max-xs:flex-col max-xs:gap-10 max-xs:items-center' >
+            <div className=' ' >
               <a href="#">
                 <img src={logo} alt="" />
               </a>
               <div className='bg-primary h-[2px] w-full block mt-[30px]' ></div>
             </div>
-            <div className='ml-[70px]' >
+            <div className='ml-[70px] max-xs:ml-0 max-xs:text-center' >
               <span className='text-[14px] leading-[13.4px] opacity-50' >Join our community</span>
               <div className='flex gap-[10px] mt-[18px]' >
                 <a href="">
@@ -41,24 +41,24 @@ const Footer = () => {
           </div>
           <div >
 
-            <ul className='flex justify-end' >
-              <li className='text-[14px] font-medium leading-[10px]'><a href="#">App</a></li>
-              <li className='text-[14px] font-medium ml-[60px] leading-[10px]'><a href="#">Farm</a></li>
-              <li className='text-[14px] font-medium ml-[60px] leading-[10px]'><a href="#">Roadmap</a></li>
-              <li className='text-[14px] font-medium ml-[60px] leading-[10px]'><a href="#">Features</a></li>
-              <li className='text-[14px] font-medium ml-[60px] leading-[10px]'><a href="#">About</a></li>
+            <ul className='flex justify-end max-xs:justify-between' >
+              <li className='text-[14px] font-medium leading-[10px] text-center'><a href="#">App</a></li>
+              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Farm</a></li>
+              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Roadmap</a></li>
+              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Features</a></li>
+              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">About</a></li>
             </ul>
 
             <ul className='flex mt-[21px]' >
-              <li className='text-[10px] opacity-50 font-medium leading-[10px]'><a href="#">Cookie Policy</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] leading-[10px]'><a href="#">Privacy Policy</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] leading-[10px]'><a href="#">Terms & Conditions</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] leading-[10px]'><a href="#">Risk Disclaimer</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] leading-[10px]'><a href="#">Terms of use</a></li>
+              <li className='text-[10px] opacity-50 font-medium leading-[10px] text-center'><a href="#">Cookie Policy</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Privacy Policy</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Terms & Conditions</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Risk Disclaimer</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Terms of use</a></li>
             </ul>
           </div>
         </div>
-        <span className='mt-[31px] block text-end text-[12px] opacity-50' >2022 Liquidus DeFi Technologies, Dubai all Rights Reserved</span>
+        <span className='mt-[31px] block text-end max-lg:text-center text-[12px] opacity-50' >2022 Liquidus DeFi Technologies, Dubai all Rights Reserved</span>
       </div>
     </footer>
   )
