@@ -1,4 +1,5 @@
-import { MouseEventHandler, useState, useRef, useEffect, TouchEventHandler, ReactNode, TouchEvent } from "react"
+import { MouseEventHandler, useState, useRef, useEffect, TouchEventHandler, ReactNode, TouchEvent, useLayoutEffect } from "react"
+import {gsap} from 'gsap'
 
 
 
@@ -68,13 +69,55 @@ const Explanation = ({ classNames = '', children }: ClassNamesProp): JSX.Element
 
 const SecurityRating = () => {
 
+  const securityRatingContainerRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.timeline({
+        defaults: {
+          ease: "power4.out",
+          duration:.7
+        },
+        scrollTrigger: {
+          trigger: securityRatingContainerRef.current,
+          start: 'top 60%',
+        }
+      })
+        .fromTo(securityRatingContainerRef.current, {
+          opacity: 0
+        }, {
+          opacity: 1,
+        }).fromTo('.heading', {
+          opacity: 0,
+          y:100,
+        }, {
+          opacity: 1,
+          y:0
+        },"-=.5").fromTo('.slider-container ', {
+          opacity: 0,
+          y:50,
+        }, {
+          opacity: 1,
+          y:0
+        },"<+=.2").fromTo('.explanation', {
+          opacity: 0,
+          y:30,
+        }, {
+          opacity: 1,
+          y:0
+        },"<+=.1")
+    }, securityRatingContainerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   const [elementRevealFraq, setElementRevealFraq] = useState<number>(0.22)
   const [riskRate, setRiskRate] = useState<RiskRate>(RiskRate.TooRisky)
   const [showToolTip, setShowToolTip] = useState<boolean>(true)
 
   const sliderContainer = useRef<HTMLDivElement>(null);
 
-  const slide = (xPosition: (number) ): void => {
+  const slide = (xPosition: (number)): void => {
     const containerBoundingRect = sliderContainer.current?.getBoundingClientRect();
     setElementRevealFraq(() => {
       if (containerBoundingRect) {
@@ -119,13 +162,13 @@ const SecurityRating = () => {
   }, [elementRevealFraq])
 
   return (
-    <section className='container' >
-      <div className='w-full bg-[#E9FEFD] px-[54px]' >
-        <div className="pb-[70px] pt-[69px]" >
-          <h1 className=' font-semibold text-[42px] leading-[42px] text-center text-dark opacity-50 ' >Check out our advanced  </h1>
-          <h1 className=' font-semibold text-[42px] leading-[42px] text-center text-dark ' >Security rating system </h1>
+    <section ref={securityRatingContainerRef} className='container' >
+      <div className='w-full bg-[#E9FEFD] px-[54px] max-sm:px-[20px]  max-md:pb-[60px]' >
+        <div className="heading pb-[70px] pt-[69px]" >
+          <h1 className=' font-semibold text-[42px] max-md:text-[30px] leading-[42px] text-center text-dark opacity-50 ' >Check out our advanced  </h1>
+          <h1 className=' font-semibold text-[42px] max-md:text-[30px] leading-[42px] text-center text-dark ' >Security rating system </h1>
         </div>
-        <div ref={sliderContainer} className="w-full relative pb-[11px]" >
+        <div ref={sliderContainer} className="slider-container w-full relative pb-[11px]" >
           <div className="first-slider-container" >
             <div className="flex left-slider items-center relative bg-[#292C33]  h-[100px] rounded-[12px] px-[24px]" >
               {/* Relying on other projects */}
@@ -199,7 +242,7 @@ const SecurityRating = () => {
           </div>
           {showToolTip &&<PullAlongToolTip />}
         </div>
-        <div className="w-full h-[100px] relative" >
+        <div className="explanation w-full h-[100px] relative max-md:hidden" >
           <Explanation classNames="left-[9%]" >
             Relying on <br /> other projects
           </Explanation>
