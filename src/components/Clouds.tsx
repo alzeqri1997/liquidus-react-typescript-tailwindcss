@@ -8,7 +8,6 @@ import cld5 from '../assets/icons/cloud5.svg'
 
 const Clouds = () => {
   const cloudContainerRef = useRef<HTMLDivElement>(null)
-  const img1 = useRef<HTMLImageElement>(null)
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.timeline({

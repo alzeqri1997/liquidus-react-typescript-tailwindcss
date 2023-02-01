@@ -97,7 +97,7 @@ const MobileView = () => {
         <div className='max-w-[545px] mx-auto' >
           <div className='flex justify-center'>
             {btnTexts.map((text, index) => (
-              <button key={index} onClick={() => setMobileId(index + 1)} className={`btn2 ${mobileId === index + 1 ? 'bg-primary bg-opacity-[0.2] ' : ''}`} >
+              <button key={index} onClick={() => setMobileId(index + 1)} className={`btn-3 ${mobileId === index + 1 ? 'bg-primary bg-opacity-[0.2] ' : ''}`} >
                 {text}
               </button>
             ))}

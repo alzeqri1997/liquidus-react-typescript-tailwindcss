@@ -1,3 +1,5 @@
+import { useRef, useLayoutEffect } from 'react';
+import { gsap } from 'gsap';
 import appStore from '../assets/icons/app-store.png';
 import googlePlay from '../assets/icons/google-play.png'
 import screenApp1 from '../assets/images/screen-app1.png'
@@ -6,29 +8,80 @@ import screenApp3 from '../assets/images/screen-app3.png'
 
 
 const DownloadApp = () => {
+  const downloadAppContainerRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.timeline({
+        defaults: {
+          duration: .7
+        },
+        scrollTrigger: {
+          trigger: '.heading-container',
+          start: 'top center'
+        }
+      }).fromTo('.heading-left', {
+        opacity: 0,
+        x: -100
+      }, {
+        opacity: 1,
+        x: 100
+      }).fromTo('.heading-right', {
+        opacity: 0,
+        x: 100
+      }, {
+        opacity: 1,
+        x: 0
+      }, "<+=.3").fromTo('.stores-container a', {
+        opacity: 0,
+        y: 100
+      }, {
+        opacity: 1,
+        y: 0,
+        stagger: .3
+      }, "<+=.2");
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '.screens-container',
+          start: '-=100px bottom',
+          end:'center top',
+          scrub: 3,
+        }
+      }).to(".screen-behind-left", {
+        top: 150,
+        right:"80%"
+      }).to('.screen-behind-right', {
+        top: 150,
+        left:"80%"
+      },"<")
+    },downloadAppContainerRef)
+  
+    return () => ctx.revert()
+  }, [])
   return (
-    <section className='container' >
+    <section ref={downloadAppContainerRef} className='container' >
       <div className="heading-container  max-w-[565px] mx-auto">
-        <h1 className="text-[60px] font-medium leading-[73.14px]">
+        <h1 className="heading-left text-[60px] font-medium leading-[73.14px]">
           Get started
         </h1>
-        <h1 className="text-[60px] font-medium leading-[73.14px] text-end ">
+        <h1 className="heading-right text-[60px] font-medium leading-[73.14px] text-end ">
           with <strong>Liquidus</strong>
         </h1>
 
-        <div className='flex mx-auto w-fit mt-[137px]' >
+        <div className='stores-container flex flex-wrap max-sm:justify-center max-sm:gap-5 max-sm:w-full mx-auto w-fit mt-[137px]' >
           <a href="#">
-            <img className='mr-[16px]' src={appStore} alt="apple store" />
+            <img className=' transition-transform hover:scale-105 mr-[16px] max-sm:mr-0' src={appStore} alt="apple store" />
           </a>
           <a href="#">
-            <img src={googlePlay} alt="google play" />
+            <img className=' transition-transform duration-500 hover:scale-105 ' src={googlePlay} alt="google play" />
           </a>
         </div>
       </div>
-      <div className='flex mx-auto w-fit relative z-10 translate-y-[130px] ' >
-        <img className='rotate-[-6deg] z-30 absolute right-[90%] top-[103px]' src={screenApp1} alt="screen app" />
-        <img className='z-40' src={screenApp2} alt="screen app" />
-        <img className=' z-30 rotate-[6deg] absolute left-[90%] top-[103px] ' src={screenApp3} alt="screen app" />
+      <div className='screens-container flex mx-auto w-fit relative z-10 translate-y-[130px] ' >
+        <img className='screen-behind-left mobile-screen rotate-[-6deg] z-30 absolute right-[120%] top-[-70px]' src={screenApp1} alt="screen app" />
+        <img className='mobile-screen z-40' src={screenApp2} alt="screen app" />
+        <img className='screen-behind-right mobile-screen z-30 rotate-[6deg] absolute left-[120%] top-[-70px] ' src={screenApp3} alt="screen app" />
         {/* clouds */}
         <svg className='absolute bottom-[188px] left-[170%]' width="654" height="267" viewBox="0 0 654 267" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.263104 202.645C0.262135 194.23 1.91918 185.897 5.13961 178.123C8.36005 170.348 13.0808 163.284 19.0323 157.333C24.9838 151.382 32.0495 146.662 39.8258 143.442C47.6022 140.221 55.9369 138.563 64.3541 138.563C68.5788 138.563 72.7933 138.976 76.9376 139.796C78.8423 125.771 83.8615 112.35 91.6275 100.517C99.3935 88.6829 109.709 78.7362 121.819 71.4055C133.929 64.0748 147.526 59.5457 161.614 58.1502C175.702 56.7546 189.924 58.528 203.238 63.3403C209.847 45.228 221.821 29.5594 237.563 18.4225C253.305 7.28568 272.069 1.20943 291.352 1.00346C310.636 0.797497 329.525 6.47158 345.502 17.2697C361.479 28.0677 373.784 43.477 380.779 61.444C393.52 55.3656 407.461 52.2191 421.578 52.2358C438.05 52.2267 454.24 56.5087 468.552 64.6599C482.864 72.8111 494.805 84.5501 503.197 98.7199C507.523 97.6564 511.961 97.1188 516.415 97.1188C527.39 97.1167 538.117 100.376 547.234 106.482C556.351 112.589 563.447 121.267 567.62 131.414C573.36 129.901 579.272 129.137 585.208 129.141C603.453 129.141 620.95 136.387 633.851 149.285C646.752 162.182 654 179.675 654 197.916C654 216.156 646.752 233.649 633.851 246.546C620.95 259.444 603.453 266.69 585.208 266.69H64.3541C47.3612 266.69 31.0639 259.943 19.0453 247.933C7.0268 235.924 0.270932 219.634 0.263104 202.645V202.645Z" fill="#8CFFF7" />

@@ -1,7 +1,6 @@
 import { useRef, useLayoutEffect } from "react";
 import { gsap } from 'gsap';
 import FeatureIcon from "./icons/FeatureIcon";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 
 
