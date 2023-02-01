@@ -24,6 +24,8 @@ module.exports = {
     
           'max-sm': {'max': '639px'},
           // => @media (max-width: 639px) { ... }
+          'max-xs': {'max': '564px'},
+          // => @media (max-width: 639px) { ... }
       }
     },
     colors: {
