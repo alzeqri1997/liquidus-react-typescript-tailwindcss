@@ -1,6 +1,6 @@
 import React, { useState, useRef, useLayoutEffect } from 'react'
 import FAQTabs from './FAQTabs';
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 
 type FAQDataTypes = {
   id: 1 | 2 | 3,
@@ -87,6 +87,7 @@ const faqData: FAQDataTypes[] = [
 const FAQ = () => {
   const [currentTab, setCurrentTab] = useState(1);
   const faqTabsRef = useRef<HTMLDivElement>(null)
+  const faqContainerRef = useRef<HTMLDivElement>(null)
 
   function changeTab(id: number) {
     gsap.to(faqTabsRef.current, {
@@ -104,34 +105,54 @@ const FAQ = () => {
       duration: .2,
     });
   }, [currentTab])
+  
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: faqContainerRef.current,
+          start: 'top center',
+        },
+      }).fromTo(faqContainerRef.current, {
+        opacity: 0,
+        y:100,
+      }, {
+        y:0,
+        opacity: 1,
+        duration: 1,
+        // duration: .2,
+      });
+     }, faqContainerRef)
+     return ()=> ctx.revert()
+  }, [])
 
 
 
   return (
-    <section className='container pb-[180px]' >
-      <div className='flex px-[117px] mb-[63px]' >
-        <div className=' w-2/3 ml-auto' >
-          <h1 className=' font-bold text-[60px] leading-[73.14px mb-[20px]'>Still not sure?</h1>
+    <section ref={faqContainerRef} className='container pb-[180px]' >
+      <div className='faq-heading flex px-[117px] mb-[63px]' >
+        <div className=' w-2/3 ml-auto max-md:w-full' >
+          <h1 className=' font-bold text-[60px] max-lg:text-[40px] leading-[73.14px mb-[20px]'>Still not sure?</h1>
           <p className=' font-normal text-[20px] leading-[24px]'>All your questions about Liquidus answered.</p>
         </div>
       </div>
-      <div className='w-full flex px-[117px]' >
-        <div className=' w-1/3' >
+      <div className='w-full flex max-md:flex-col max-md:gap-[20px] px-[117px] max-md:px-0' >
+        <div className=' w-1/3 max-md:w-full' >
           {faqData.map((data) => (
-            <button onClick={() => changeTab(data.id)} key={data.id} className={`px-[26.7px] py-[15px] border-l-2 ${currentTab === data.id ? ' border-primary ' : ' border-white'}`}>
+            <button onClick={() => changeTab(data.id)} key={data.id} className={`px-[26.7px] py-[15px] border-l-2 max-md:flex max-md:flex-col ${currentTab === data.id ? ' border-primary ' : ' border-white'}`}>
               <span className='' >{data.title}</span>
             </button>
           ))}
         </div>
         {faqData.map((data) => {
           if (currentTab === data.id) return (
-            <div ref={faqTabsRef} key={data.id} className=' w-2/3 opacity-0' >
+            <div ref={faqTabsRef} key={data.id} className=' w-2/3 opacity-0 max-md:w-full' >
               <FAQTabs tabs={data.faqQuestions} />
             </div>)
         })}
       </div>
-      <div className='px-[117px]' >
-        <div className=' w-2/3 ml-auto' >
+      <div className='px-[117px] max-md:px-0' >
+        <div className=' w-2/3 ml-auto max-md:w-full' >
           <a className='flex justify-between items-center text-[#9AA6CF] font-semibold text-[12px] leading-[14px] p-[8px] border rounded-[4px]' href="#">
             <span>Read more documentation</span>
             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
