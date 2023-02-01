@@ -1,4 +1,3 @@
-/** @format */
 
 const Arrow = () => (
 	<svg
@@ -10,12 +9,12 @@ const Arrow = () => (
 	>
 		<path
 			d="M3.7334 7.94065L12.0297 7.94065"
-			stroke="#9AA6CF"
+			stroke="currentColor"
 			strokeLinecap="round"
 		/>
 		<path
 			d="M9.6582 5.33325L12.2664 7.94066L9.6582 10.5481"
-			stroke="#9AA6CF"
+			stroke="currentColor"
 			strokeLinecap="round"
 		/>
 	</svg>
@@ -32,7 +31,7 @@ type PropTypes = {
 
 const AdvantageCard = ({ heading, body, link = true, componentClass = " " }: PropTypes) => {
 	return (
-		<div className={`${componentClass} max-w-[410px] py-[30px] pl-[26px] pr-[57px] box-shadow shadow-box-shadow rounded-[30px]`}>
+		<div className={`${componentClass}  max-w-[410px] max-xl:max-w-none py-[30px] pl-[26px] pr-[57px] box-shadow shadow-box-shadow rounded-[30px]`}>
 			<svg
 				width="100"
 				height="90"

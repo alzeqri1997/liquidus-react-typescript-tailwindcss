@@ -1,14 +1,8 @@
-/** @format */
-
+import { useRef, useLayoutEffect } from "react"
+import {gsap} from 'gsap'
 import coin from "../assets/icons/coin.png"
-import bnbBtc from "../assets/icons/BNB-BTC.svg"
-import cloudLg from "../assets/icons/cloud-lg.svg"
-import cloudSm from "../assets/icons/cloud-sm.svg"
 import cro from "../assets/icons/CRO.svg"
-import eth2 from "../assets/icons/ETH-2.svg"
-import usdt from "../assets/icons/USDT.svg"
 import bnb from "../assets/icons/BNB.svg"
-import ethLiq from "../assets/icons/ETH-LIQ.svg"
 import eth from "../assets/icons/ETH.svg"
 import btc from "../assets/icons/BTC.svg"
 
@@ -16,6 +10,7 @@ import AdvantageCard from "./AdvantageCard"
 
 const AdvantageIcon = () => (
 	<svg
+		className="max-sm:w-[300px]"
 		width="479"
 		height="432"
 		viewBox="0 0 479 432"
@@ -38,40 +33,48 @@ const AdvantageIcon = () => (
 				fill="white"
 			/>
 			<path
+				className="up"
 				opacity="0.2"
 				d="M266.3 60.7832C270.538 60.7832 273.974 57.3451 273.974 53.104C273.974 48.8629 270.538 45.4248 266.3 45.4248C262.062 45.4248 258.626 48.8629 258.626 53.104C258.626 57.3451 262.062 60.7832 266.3 60.7832Z"
 				fill="#17C6B5"
 			/>
 			<path
+				className="up"
 				opacity="0.2"
 				d="M424.603 139.433C428.841 139.433 432.276 135.995 432.276 131.754C432.276 127.513 428.841 124.074 424.603 124.074C420.364 124.074 416.929 127.513 416.929 131.754C416.929 135.995 420.364 139.433 424.603 139.433Z"
 				fill="#17C6B5"
 			/>
 			<path
+				className="up"
 				opacity="0.2"
 				d="M93.4006 172.541C95.776 172.541 97.7017 170.614 97.7017 168.237C97.7017 165.86 95.776 163.933 93.4006 163.933C91.0252 163.933 89.0996 165.86 89.0996 168.237C89.0996 170.614 91.0252 172.541 93.4006 172.541Z"
 				fill="#17C6B5"
 			/>
 			<path
+				className="up"
 				opacity="0.2"
 				d="M189.301 16.6081C191.676 16.6081 193.602 14.6811 193.602 12.3041C193.602 9.92699 191.676 8 189.301 8C186.926 8 185 9.92699 185 12.3041C185 14.6811 186.926 16.6081 189.301 16.6081Z"
 				fill="#17C6B5"
 			/>
 			<path
+				className="up"
 				opacity="0.2"
 				d="M278.5 171C280.433 171 282 169.433 282 167.5C282 165.567 280.433 164 278.5 164C276.567 164 275 165.567 275 167.5C275 169.433 276.567 171 278.5 171Z"
 				fill="#17C6B5"
 			/>
 			<path
+				className="up"
 				opacity="0.2"
 				d="M19.2541 118.857C29.8878 118.857 38.5081 110.23 38.5081 99.5893C38.5081 88.948 29.8878 80.3217 19.2541 80.3217C8.62034 80.3217 0 88.948 0 99.5893C0 110.23 8.62034 118.857 19.2541 118.857Z"
 				fill="#17C6B5"
 			/>
 			<path
+				className="up"
 				d="M59.6107 42.2433C71.2655 42.2433 80.7136 32.7885 80.7136 21.1255C80.7136 9.46254 71.2655 0.0078125 59.6107 0.0078125C47.9559 0.0078125 38.5078 9.46254 38.5078 21.1255C38.5078 32.7885 47.9559 42.2433 59.6107 42.2433Z"
 				fill="#17E7D6"
 			/>
 			<path
+				className="up"
 				d="M66.6272 26.8694L62.9218 32.6133C62.7541 32.8704 62.4915 33.0505 62.1914 33.1143C61.8913 33.1782 61.5782 33.1205 61.3205 32.9539L55.5806 29.2536C55.4089 29.1393 55.27 28.9819 55.1777 28.7973C55.0854 28.6126 55.043 28.407 55.0546 28.2009L55.7121 17.5414L57.6538 26.5675C57.6603 26.5922 57.6749 26.6141 57.6952 26.6298C57.7155 26.6454 57.7403 26.6539 57.7659 26.6539C57.7915 26.6539 57.8164 26.6454 57.8367 26.6298C57.857 26.6141 57.8716 26.5922 57.8781 26.5675L57.004 9.13452L63.3859 25.3444C63.3941 25.3742 63.4138 25.3994 63.4406 25.4147C63.4675 25.4299 63.4993 25.4339 63.529 25.4257C63.5588 25.4175 63.584 25.3978 63.5993 25.3709C63.6145 25.344 63.6185 25.3122 63.6103 25.2825L61.6686 16.2563L66.6426 25.7005C66.7443 25.879 66.7965 26.0815 66.7938 26.287C66.7911 26.4925 66.7336 26.6936 66.6272 26.8694Z"
 				fill="#112455"
 			/>
@@ -84,63 +87,100 @@ const AdvantageIcon = () => (
 	</svg>
 )
 
-const Arrow = () => (
-	<svg
-		width="16"
-		height="16"
-		viewBox="0 0 16 16"
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<path
-			d="M3.7334 7.94065L12.0297 7.94065"
-			stroke="#9AA6CF"
-			strokeLinecap="round"
-		/>
-		<path
-			d="M9.6582 5.33325L12.2664 7.94066L9.6582 10.5481"
-			stroke="#9AA6CF"
-			strokeLinecap="round"
-		/>
-	</svg>
-)
-
 const Advantages = () => {
+	const advantagesContainerRef = useRef<HTMLDivElement>(null)
+
+	useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+			gsap.timeline({
+				defaults:{
+					duration:.7
+				},
+				scrollTrigger: {
+					trigger: '.advantages-container',
+					start:'top center'
+				}
+			}).fromTo('.advantages-container',{
+				opacity:0
+			},{
+				opacity:1
+			}).fromTo('.advantage-icon',{
+				opacity:0
+			},{
+				opacity:1
+			},"-=.5").from('.advantage-icon .up',{
+				opacity:0,
+				y:'random([10,20,30,40,50])',
+				stagger:.2
+			},"-=.5")
+
+			gsap.timeline({
+				defaults:{
+					duration:.7
+				},
+				scrollTrigger:{
+					trigger:".advantage-card-container",
+					start:'top center'
+				}
+			}).fromTo('.advantage-card1',{
+				opacity:0,
+				y:100
+				
+			},{
+				opacity:1,
+				y:0
+			}).fromTo('.advantage-card2',{
+				opacity:0,
+				y:100
+				
+			},{
+				opacity:1,
+				y:0
+			}, "-=.4")
+		}, advantagesContainerRef)
+		
+
+
+
+
+    return () => ctx.revert()
+
+  }, [])
 	return (
-		<section className="container">
-			<div className="flex gap-[26px]">
-				<div className=" flex-1 ">
-					<div className="w-full rounded-[30px] shadow-box-shadow bg-[#E9FEFD] pt-[36px] px-[50px] pb-[60px]">
-						<div className="relative w-fit mx-auto">
+		<section ref={advantagesContainerRef} className="container">
+			<div className="advantages-container flex max-xl:flex-col gap-[26px]">
+				<div className=" flex-1">
+					<div className="w-full flex flex-col rounded-[30px] shadow-box-shadow bg-[#E9FEFD] transition-colors hover:bg-primary hover:bg-opacity-20 pt-[36px] px-[50px] pb-[60px]">
+						<div className="advantage-icon relative w-fit mx-auto">
 							<img
-								className="w-[27px] rotate-[20deg] absolute right-0 top-[100px] "
+								className="up w-[27px] rotate-[20deg] absolute right-0 top-[100px] "
 								src={cro}
 								alt="cro"
 							/>
 							<img
-								className="w-[50px] rotate-[20deg] absolute right-[100px] top-[44px] "
+								className="up w-[50px] rotate-[20deg] absolute right-[100px] top-[44px] "
 								src={eth}
 								alt="eth"
 							/>
 							<img
-								className="w-[82px] rotate-[20deg] absolute right-[100px] top-[172px] "
+								className="up w-[82px] rotate-[20deg] absolute right-[100px] top-[172px] "
 								src={bnb}
 								alt="bnb"
 							/>
 							<img
-								className="w-[28px] rotate-[20deg] absolute left-[115px] top-[178px] "
+								className="up w-[28px] rotate-[20deg] absolute left-[115px] top-[178px] "
 								src={coin}
 								alt="coin"
 							/>
 							<img
-								className="w-[38px] rotate-[20deg] absolute left-[137px] top-[80px] "
+								className="up w-[38px] rotate-[20deg] absolute left-[137px] top-[80px] "
 								src={btc}
 								alt="btc"
 							/>
 
 							<AdvantageIcon />
 						</div>
-						<div className="flex items-center mt-[77px]">
+						<div className="flex items-center mt-[77px] max-sm:mt-0">
 							<svg
 								className="mr-[8px]"
 								width="20"
@@ -166,10 +206,10 @@ const Advantages = () => {
 						</p>
 					</div>
 				</div>
-				<div>
+				<div className="advantage-card-container max-xl:flex max-xl:gap-[20px] max-md:flex-col ">
 					<AdvantageCard
 						heading="Advanced encryption."
-						componentClass="mb-[28px]"
+						componentClass="advantage-card1 mb-[28px] max-xl:mb-0 max-xl:grow hover:bg-primary hover:bg-opacity-20 "
 						body="Protecting your 12-word seed phrase with leading
 						advanced industry standard encryption."
 					/>
@@ -178,6 +218,7 @@ const Advantages = () => {
 						heading="Audited Smart contracts"
 						body="Making sure we are protected and giving the best options to 
 						our users."
+						componentClass="advantage-card2 max-xl:grow hover:bg-primary hover:bg-opacity-20"
 						link={false}
 					/>
 				</div>
