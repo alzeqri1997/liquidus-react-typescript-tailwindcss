@@ -124,13 +124,13 @@ const Tiers = () => {
   const [showTiersModal, setShowTiersModal] = useState(false)
   return (
     <>
-    <section ref={tiersRef} className='container pt-[107px] pb-[400px] relative' >
-      <div className="heading-container pb-[197px]">
+    <section id='tiers' ref={tiersRef} className='container pt-[107px] pb-[400px] max-sm:pb-[100px] relative' >
+      <div className="heading-container pb-[197px] max-sm:pb-[40px]">
         <h1 className="text-[60px] max-sm:text-[50px] max-sm:leading-[65px] font-medium leading-[73.14px] max-lg:text-center">
-          We take your  <strong>Security</strong>
+        All of this <strong>power</strong> and more
         </h1>
         <h1 className="text-[60px] max-sm:text-[50px] max-sm:leading-[65px] font-medium leading-[73.14px] text-end  max-lg:text-center">
-          very seriously at  <strong>Liquidus</strong>
+        with Liquidus <strong>premium tiers</strong>
         </h1>
       </div>
 

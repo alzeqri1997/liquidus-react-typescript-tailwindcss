@@ -1,12 +1,15 @@
-import {gsap} from 'gsap'
+import { gsap } from 'gsap'
 import { useState, useRef, useLayoutEffect, useEffect } from 'react'
 import logo from '../assets/logo.svg'
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 
 
 const mobileTl = gsap.timeline({ paused: true, reversed: true });
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
+  const [element, setElement] = useState<string>('')
   const mobileMenuRef = useRef<HTMLDivElement>(null)
+  gsap.registerPlugin(ScrollToPlugin)
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -25,7 +28,29 @@ const Header = () => {
       })
     }, mobileMenuRef);
     return () => ctx.revert()
-  },[])
+  }, []);
+
+  useLayoutEffect(() => {
+    function scrollToElement() {
+      if (element) {
+        gsap.to(window, {duration:2, scrollTo:{y: element, offsetY:100}, ease:"circ.inOut"})
+      }
+    }
+
+    scrollToElement()
+
+    return () => setElement('');
+  })
+  
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      if (showMobileMenu === true) {
+        setShowMobileMenu(false);
+        mobileTl.reverse();
+      }
+    });
+  }, [showMobileMenu])
+  
 
   const handleMobileMenu = ()=> {
     setShowMobileMenu((prev) => !prev);
@@ -65,11 +90,11 @@ const Header = () => {
         <div className='header-left flex items-center' >
           <a href="#"><img src={logo} alt="logo" /></a>
           <ul className='flex ml-[30px]' >
-            <li className='text-[14px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#">Farm</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-colors hover:text-primary'><a href="#">Scan</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-colors hover:text-primary'><a href="#">Features</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-colors hover:text-primary'><a href="#">Litepaper</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-colors hover:text-primary'><a href="#">Company</a></li>
+            <li className='text-[14px] font-medium leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href='#' onClick={()=> setElement('#farm')}>Farm</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#security')} >Security</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#features')}>Features</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#litepaper')} >Litepaper</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#tiers')}>tiers</a></li>
           </ul>
         </div>
 
@@ -125,11 +150,11 @@ const Header = () => {
           </div>
           <div>
             <ul className='flex flex-col' >
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#">Farm</a></li>
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#">Scan</a></li>
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#">Features</a></li>
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#">Litepaper</a></li>
-              <li className='text-[14px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#">Company</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#farm')}>Farm</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#security')}>Security</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#features')}>Features</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#litepaper')}>Litepaper</a></li>
+              <li className='text-[14px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#tiers')}>Tiers</a></li>
             </ul>
           </div>
 

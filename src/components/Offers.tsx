@@ -76,7 +76,7 @@ const Offers = () => {
     return () => ctx.revert()
   }, [])
   return (
-    <section ref={offersContainer} className='container pt-[157px] pb-[95px]  ' >
+    <section id='farm' ref={offersContainer} className='container pt-[157px] pb-[95px]  ' >
       <div className="bg-[#E9FEFD] py-[55px] px-[99px] max-sm:px-[20px] rounded-[32px]" >
         <div className="heading-container pb-[78px]">
           <h1 className="heading-left text-[60px] font-medium leading-[73.14px] max-lg:text-center">

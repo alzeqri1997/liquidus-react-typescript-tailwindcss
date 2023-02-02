@@ -68,14 +68,13 @@ const Cards = () => {
         }, {
           opacity: 1,
           scale: 1,
-          
         },"<")
     }, cardsContainerRef)
 
     return () => ctx.revert()
   }, [])
   return (
-    <section ref={cardsContainerRef} className="container">
+    <section id='litepaper' ref={cardsContainerRef} className="container">
       <div className='' >
 
         {/* cards */}

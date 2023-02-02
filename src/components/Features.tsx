@@ -70,24 +70,6 @@ const Features = () => {
 
 	useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-			gsap.timeline({
-				scrollTrigger: {
-					trigger: '.heading-container',
-					start:'top center'
-				}
-			}).fromTo('.heading-1', {
-				opacity: 0,
-				x:-100
-			}, {
-				opacity: 1,
-				x:0
-			}).fromTo('.heading-2', {
-				opacity: 0,
-				x:100
-			}, {
-				opacity: 1,
-				x:0
-			},"-=.3")
 			const featureContainer: Array<HTMLDivElement> = gsap.utils.toArray('.feature-container')
 	
 			featureContainer.forEach((feature) => {
@@ -169,13 +151,13 @@ const Features = () => {
 
   }, [])
 	return (
-		<section ref={featuresContainerRef} className="container pt-[179px] max-sm:pt-[90px]">
+		<section id="features" ref={featuresContainerRef} className="container pt-[179px] max-sm:pt-[90px]">
 			<div className="heading-container pb-[197px]">
 				<h1 className="heading-1 text-[60px] max-sm:text-[50px] font-medium leading-[73.14px] max-sm:leading-[65px] max-lg:text-center">
-				We take your  <strong>Security</strong>
+				Earn up to   <strong>100% APY,</strong>
 				</h1>
 				<h1 className="heading-2 text-[60px] max-sm:text-[50px] font-medium leading-[73.14px] max-sm:leading-[65px] text-end max-lg:text-center">
-				very seriously at  <strong>Liquidus</strong>
+				hassle-free with <strong>one click.</strong>
 				</h1>
 			</div>
 
@@ -196,14 +178,6 @@ const Features = () => {
 				<FeatureIcon icon={index +1 } />
 			</div>
 			))}
-			<div className="pb-[71px] pt-[224px] max-sm:pt-[100px] ">
-				<h1 className="heading1 text-[60px] leading-[73.14px] max-sm:text-[50px] max-sm:leading-[65px] font-medium  max-lg:text-center">
-					Earn up to <strong>100% APY,</strong>
-				</h1>
-				<h1 className="heading2 text-[60px] leading-[73.14px] max-sm:text-[50px] max-sm:leading-[65px] font-medium  text-end max-lg:text-center ">
-					hassle-free with <strong>one click.</strong>
-				</h1>
-			</div>
 		</section>
 	)
 }

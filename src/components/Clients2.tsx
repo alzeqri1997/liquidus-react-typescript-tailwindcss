@@ -42,7 +42,7 @@ const Clients2 = () => {
     return () => ctx.revert()
   }, [])
   return (
-    <section ref={clientRef} className='container pb-[215px]' >
+    <section ref={clientRef} className='container pb-[215px] max-sm:pb-[100px]' >
       <div className='client-container relative mt-[28px] flex flex-wrap justify-between max-lg:justify-center  items-center gap-[112px] max-sm:gap-[60] px-[109px] max-lg:px-[50px] py-[54px] shadow-box-shadow rounded-[20px] ' >
         <img className='' src={certik} alt="certik brand" />
         <img className='' src={hacken} alt="hacken brand" />

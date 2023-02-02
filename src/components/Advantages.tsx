@@ -91,7 +91,26 @@ const Advantages = () => {
 	const advantagesContainerRef = useRef<HTMLDivElement>(null)
 
 	useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
+		const ctx = gsap.context(() => {
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: '.heading-container',
+					start: 'top center'
+				}
+			}).fromTo('.heading-1', {
+				opacity: 0,
+				x: -100
+			}, {
+				opacity: 1,
+				x: 0
+			}).fromTo('.heading-2', {
+				opacity: 0,
+				x: 100
+			}, {
+				opacity: 1,
+				x: 0
+			}, "-=.3");
+
 			gsap.timeline({
 				defaults:{
 					duration:.7
@@ -139,15 +158,19 @@ const Advantages = () => {
 			}, "-=.4")
 		}, advantagesContainerRef)
 		
-
-
-
-
     return () => ctx.revert()
 
   }, [])
 	return (
-		<section ref={advantagesContainerRef} className="container">
+		<section id="security" ref={advantagesContainerRef} className="container">
+			<div className="heading-container pb-[71px] pt-[224px] max-sm:pt-[100px] ">
+				<h1 className="heading-1 text-[60px] leading-[73.14px] max-sm:text-[50px] max-sm:leading-[65px] font-medium  max-lg:text-center">
+				We take your  <strong>Security</strong>
+				</h1>
+				<h1 className="heading-2 text-[60px] leading-[73.14px] max-sm:text-[50px] max-sm:leading-[65px] font-medium  text-end max-lg:text-center ">
+				very seriously at  <strong>Liquidus</strong>
+				</h1>
+			</div>
 			<div className="advantages-container flex max-xl:flex-col gap-[26px]">
 				<div className=" flex-1">
 					<div className="w-full flex flex-col rounded-[30px] shadow-box-shadow bg-[#E9FEFD] transition-colors hover:bg-primary hover:bg-opacity-20 pt-[36px] px-[50px] pb-[60px]">
