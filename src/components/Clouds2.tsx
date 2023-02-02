@@ -30,7 +30,7 @@ const Clouds2 = () => {
 
   }, [])
   return (
-    <div ref={cloudContainerRef} >
+    <div className="max-sm:hidden" ref={cloudContainerRef} >
       <div className='relative clouds-container container pt-[100px]  ' >
         <svg className=' absolute bottom-[0] left-[-50%]' width="3176" height="473" viewBox="0 0 3176 473" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_1178_4996)">

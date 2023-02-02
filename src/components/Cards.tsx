@@ -79,7 +79,7 @@ const Cards = () => {
       <div className='' >
 
         {/* cards */}
-        <div className='cards-container flex relative z-50 w-fit mx-auto max-sm:w-[50%]' >
+        <div className='cards-container max-sm:pb-[50px] flex relative z-50 w-fit mx-auto max-sm:w-[50%]' >
           <img style={{transform: 'translateX(100px)'}} className='card-left max-sm:absolute top-[30px] right-full w-full' src={card3} alt="" />
           <img className='card-center relative z-50 w-full'  src={card1} alt="" />
           <img style={{transform: 'translateX(-100px)'}} className="card-right max-sm:absolute top-[30px] left-full w-full" src={card2} alt="" />
@@ -88,7 +88,7 @@ const Cards = () => {
 
         <div className='relative' >
         {/* right-wing */}
-        <svg className='right-wing absolute right-[-10%] top-[-60%]' width="375" height="394" viewBox="0 0 375 394" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className='right-wing absolute right-[-10%] top-[-60%] max-sm:hidden' width="375" height="394" viewBox="0 0 375 394" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.2">
             <path d="M4.00121 294.794C4.00121 294.794 29.045 254.942 75.3604 262.83C75.3604 262.83 54.1551 291.559 30.7562 290.893" stroke="#17E7D6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M42.3836 296.664C42.3836 296.664 71.0082 303.692 85.259 324.602C85.259 324.602 47.4493 338.086 14.7547 293.301" stroke="#17E7D6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -111,7 +111,7 @@ const Cards = () => {
           </g>
         </svg>
         {/* left-wing */}
-        <svg className='left-wing absolute left-[-10%] top-[-67%]' width="316" height="398" viewBox="0 0 316 398" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className='left-wing absolute left-[-10%] top-[-67%] max-sm:hidden' width="316" height="398" viewBox="0 0 316 398" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.2">
             <path d="M314.385 335.729C314.385 335.729 298.559 291.237 251.747 288.191C251.747 288.191 266.226 320.993 289.162 325.755" stroke="#17E7D6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M276.368 328.747C276.368 328.747 246.814 328.947 228.342 346.121C228.342 346.121 262.464 368.18 304.155 331.909" stroke="#17E7D6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
@@ -136,7 +136,7 @@ const Cards = () => {
 
 
         {/* Stick */}
-          <svg className='stick max-sm:w-[50%] mx-auto mt-[28px]' width="339" height="368" viewBox="0 0 339 368" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='stick max-sm:w-[50%] mx-auto mt-[28px] max-sm:hidden' width="339" height="368" viewBox="0 0 339 368" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_631_3989)">
               <path d="M254.764 74.4536L83.5938 74.2317L82.86 636.293L254.03 636.515L254.764 74.4536Z" fill="#16E7D6" stroke="#0B3B52" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M264.391 148.271L293.051 148.294L293.082 113.814L237.583 113.743L237.474 186.89L325.829 187.005L325.972 70.4215L169.587 70.2419L13.2003 70.0366L13.0575 186.62L101.413 186.736L101.494 113.567L45.9952 113.497L45.9413 148.006L74.6011 148.029" fill="#16E7D6" />
@@ -156,7 +156,7 @@ const Cards = () => {
             </defs>
           </svg>
           {/* Clouds */}
-          <svg className='clouds absolute bottom-0 left-[-40%]' width="2216" height="301" viewBox="0 0 2216 301" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='clouds max-sm:hidden absolute bottom-0 left-[-40%]' width="2216" height="301" viewBox="0 0 2216 301" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className='right' d="M1562 201.647C1562 193.232 1563.66 184.899 1566.88 177.125C1570.1 169.35 1574.82 162.286 1580.77 156.335C1586.72 150.384 1593.79 145.664 1601.56 142.443C1609.34 139.223 1617.67 137.565 1626.09 137.565C1630.32 137.565 1634.53 137.978 1638.67 138.798C1640.58 124.773 1645.6 111.352 1653.36 99.5185C1661.13 87.6848 1671.45 77.7382 1683.56 70.4075C1695.67 63.0767 1709.26 58.5477 1723.35 57.1521C1737.44 55.7566 1751.66 57.5299 1764.97 62.3423C1771.58 44.2299 1783.56 28.5614 1799.3 17.4245C1815.04 6.28763 1833.8 0.21138 1853.09 0.00541493C1872.37 -0.20055 1891.26 5.47353 1907.24 16.2716C1923.21 27.0697 1935.52 42.4789 1942.52 60.446C1955.26 54.3675 1969.2 51.221 1983.31 51.2377C1999.79 51.2286 2015.98 55.5107 2030.29 63.6619C2044.6 71.8131 2056.54 83.5521 2064.93 97.7219C2069.26 96.6584 2073.7 96.1208 2078.15 96.1208C2089.13 96.1187 2099.85 99.3778 2108.97 105.484C2118.09 111.591 2125.18 120.269 2129.36 130.416C2135.1 128.903 2141.01 128.139 2146.94 128.143C2165.19 128.143 2182.69 135.389 2195.59 148.287C2208.49 161.184 2215.74 178.677 2215.74 196.918C2215.74 215.158 2208.49 232.651 2195.59 245.548C2182.69 258.446 2165.19 265.692 2146.94 265.692H1626.09C1609.1 265.692 1592.8 258.945 1580.78 246.935C1568.76 234.926 1562.01 218.636 1562 201.647V201.647Z" fill="#8CFFF7" />
             <g clipPath="url(#clip0_1179_5005)">
               <path className='right' d="M704.558 256.735C708.164 198.222 756.601 151.887 815.796 151.887C840.414 151.89 864.339 160.068 883.84 175.148C903.341 190.227 917.32 211.359 923.598 235.248C934.425 229.21 946.489 225.747 958.86 225.128C971.231 224.509 983.578 226.75 994.949 231.678C1006.32 236.605 1016.41 244.089 1024.45 253.55C1032.48 263.011 1038.24 274.198 1041.28 286.247C1052.16 283.455 1063.6 283.82 1074.28 287.297C1078.25 276.441 1084.56 266.595 1092.75 258.46C1100.94 250.325 1110.82 244.101 1121.67 240.229C1132.53 236.358 1144.11 234.935 1155.58 236.061C1167.05 237.187 1178.13 240.834 1188.04 246.744C1197.32 235.344 1209.72 226.913 1223.72 222.488C1237.71 218.063 1252.69 217.837 1266.81 221.837C1280.93 225.837 1293.58 233.889 1303.2 245.004C1312.82 256.119 1319 269.813 1320.97 284.403H1321.66C1337.32 284.403 1352.33 290.645 1363.4 301.754C1374.47 312.863 1380.69 327.931 1380.69 343.642C1380.69 359.353 1374.47 374.42 1363.4 385.53C1352.33 396.639 1337.32 402.88 1321.66 402.88H704.326V402.831C685.255 402.451 667.096 394.575 653.754 380.896C640.411 367.217 632.953 348.828 632.982 329.687C633.012 310.545 640.528 292.18 653.912 278.543C667.297 264.906 685.481 257.086 704.552 256.766L704.558 256.735Z" fill="#79FFFA" />

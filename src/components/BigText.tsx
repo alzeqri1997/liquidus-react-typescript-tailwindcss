@@ -31,7 +31,7 @@ const BigText = ({ text } : propTypes) => {
 
 
   return (
-    <div ref={bigTextContainer} className='max-w-[1027px] overflow-hidden  px-[30px] relative mx-auto mb-[195px]' >
+    <div ref={bigTextContainer} className='max-w-[1027px] overflow-hidden  px-[30px] relative mx-auto mb-[195px] max-sm:mb-[60px]' >
       <h1 className='text-[100px] max-md:text-[50px] max-sm:text-[38px] text-primary font-bold leading-[121.9px] max-md:leading-[80px] max-sm:leading-[50px] text-center '>{text}</h1>
       <div ref={bigTextOverlayRef} className='absolute w-full h-[150%] bottom-0 bg-linear left-0' > </div>
     </div>

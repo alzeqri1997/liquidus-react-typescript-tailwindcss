@@ -52,26 +52,26 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className='hero-right  max-lg:relative' >
+        <div className='hero-right max-lg:relative' >
           <img className='hero-image absolute max-lg:relative z-10 top-[30px] right-[80px] max-xl:right-[0] max-sm:w-[80%]' src={heroImage} alt="hero bitcoin" />
           <img className='eth absolute top-[0] right-[340px] max-xl:top-[-40px] max-lg:top-[0] max-lg:right-[500px] max-md:hidden' src={eth} alt="" />
           <img className='btc absolute right-[390px] top-[133px] max-xl:right-[290px]  max-lg:right-[490px] max-lg:top-[133px] max-md:hidden' src={btc} alt="" />
           <img className='ethliq absolute top-[150px] right-[-80px] max-xl:right-[-120px] max-lg:right-[0] max-lg:top-[103px] max-md:hidden ' src={ethLiq} alt="" />
           <img className='bnb absolute bottom-[20px] right-[-110px] max-lg:bottom-[433px] max-lg:right-[33px] max-md:hidden ' src={bnb} alt="BNB" />
-          <svg className='absolute bottom-0 left-[450px] z-20 max-lg:bottom-[100%]' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='absolute bottom-0 left-[450px] z-20 max-lg:bottom-[100%] max-md:hidden' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.2" d="M5.5 11C8.53757 11 11 8.53757 11 5.5C11 2.46243 8.53757 0 5.5 0C2.46243 0 0 2.46243 0 5.5C0 8.53757 2.46243 11 5.5 11Z" fill="#17E7D6" />
           </svg>
-          <svg className='absolute bottom-[-200px] left-[200px] max-lg:bottom-[70%] max-lg:left-[150px]' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='absolute bottom-[-200px] left-[200px] max-lg:bottom-[70%] max-lg:left-[150px] max-md:hidden' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.2" d="M5.5 11C8.53757 11 11 8.53757 11 5.5C11 2.46243 8.53757 0 5.5 0C2.46243 0 0 2.46243 0 5.5C0 8.53757 2.46243 11 5.5 11Z" fill="#17E7D6" />
           </svg>
-          <svg className='absolute bottom-[-230px] right-[100px] max-lg:bottom-[300px]' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='absolute bottom-[-230px] right-[100px] max-lg:bottom-[300px] max-md:hidden' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9.62 19.24C14.933 19.24 19.24 14.933 19.24 9.62C19.24 4.30702 14.933 0 9.62 0C4.30702 0 0 4.30702 0 9.62C0 14.933 4.30702 19.24 9.62 19.24Z" fill="#17E7D6" />
           </svg>
 
 
         </div>
       </div>
-      <img className='cloud absolute top-[202px] right-[0] ' src={cloud} alt="cloud" />
+      <img className='cloud absolute top-[202px] right-[0] max-md:hidden' src={cloud} alt="cloud" />
     </section>
   )
 }

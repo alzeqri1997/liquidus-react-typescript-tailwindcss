@@ -60,7 +60,7 @@ const DownloadApp = () => {
     return () => ctx.revert()
   }, [])
   return (
-    <section ref={downloadAppContainerRef} className='container' >
+    <section ref={downloadAppContainerRef} className='container max-md:overflow-hidden' >
       <div className="heading-container  max-w-[565px] mx-auto">
         <h1 className="heading-left text-[60px] font-medium leading-[73.14px]">
           Get started

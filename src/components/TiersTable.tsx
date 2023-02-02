@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { MouseEvent, useEffect, useRef } from 'react'
 import tiersTableImage from '../assets/images/TiersTable.png'
 import {gsap} from 'gsap'
 
@@ -55,12 +55,16 @@ useEffect(() => {
       }
     });
   }
+
+  function handleChildElementClick(e: MouseEvent) {
+    e.stopPropagation()
+  }
     return (
-      <div onClick={closeModal} ref={modalContainer} className=' fixed opacity-0 top-0 left-0 grid place-content-center z-[100000] bg-secondary bg-opacity-25 w-screen h-screen   ' >
-        <div ref={table} className='min-w-[887px] scale-0 relative bg-white text-center px-[20px] py-[40px] rounded-[20px]' >
+      <div onClick={closeModal} ref={modalContainer} className=' fixed opacity-0 top-0 left-0 grid place-content-center z-[100000] bg-secondary bg-opacity-25 w-screen h-screen px-[20px]   ' >
+        <div onClick={(e)=> handleChildElementClick(e)  } ref={table} className=' min-w-[887px] max-lg:min-w-full scale-0 relative bg-white text-center px-[20px] py-[40px] rounded-[20px]' >
           <Close handleClick={closeModal}  />
           <h1 className='text-dark opacity-50 font-semibold text-[42px] leading-[51.2px] mb-[20px]  ' >Premium Tiers Table</h1>
-          <img className='mx-auto max-w-[500px]' src={tiersTableImage} alt="premium tiers table" />
+          <img className='mx-auto w-full max-w-[500px] pointer-events-none' src={tiersTableImage} alt="premium tiers table" />
         </div>
       </div>
     )
