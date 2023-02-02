@@ -13,6 +13,7 @@ import Clients2 from './components/Clients2'
 import SecurityRating from './components/SecurityRating'
 import Tiers from './components/Tiers'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 import Clouds2 from './components/Clouds2'
 import Cards from './components/Cards'
 import Offers from './components/Offers'
@@ -25,6 +26,8 @@ function App() {
   const app = useRef<HTMLDivElement>(null)
 
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin)
+
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -56,10 +59,8 @@ function App() {
         }, "-=1")
         .fromTo('.header-left ul li', {
           opacity: 0,
-          x: -50,
         }, {
-          opacity: .5,
-          x: 0,
+          opacity: 1,
           stagger: .1
         }, "-=.5")
         .fromTo('.hero-left', {
@@ -157,9 +158,9 @@ function App() {
       <div className='bg-white text-dark' >
         <Offers />
         <FAQ />
-        <DownloadApp/>
+        <DownloadApp />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

@@ -70,10 +70,10 @@ const DownloadApp = () => {
         </h1>
 
         <div className='stores-container flex flex-wrap max-sm:justify-center max-sm:gap-5 max-sm:w-full mx-auto w-fit mt-[137px]' >
-          <a href="#">
+          <a href="https://apps.apple.com/pk/app/liquidus-defi-crypto-wallet/id1625544806" target={'_blank'}>
             <img className=' transition-transform hover:scale-105 mr-[16px] max-sm:mr-0' src={appStore} alt="apple store" />
           </a>
-          <a href="#">
+          <a href="https://play.google.com/store/apps/details?id=finance.liquidus.wallet" target={'_blank'}>
             <img className=' transition-transform duration-500 hover:scale-105 ' src={googlePlay} alt="google play" />
           </a>
         </div>

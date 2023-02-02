@@ -110,7 +110,7 @@ const MobileView = () => {
               </Fragment>
             )
           })}
-          <a href="#" className='font-semibold text-[15px] leading-[18.29px] text-center  py-[21px] px-[36px] rounded-full bg-primary text-dark block w-fit mx-auto' ><span>Start earning</span></a>
+          <a href="http://liquidus.app.link/dsmexkJD1tb" target={'_blank'} className='font-semibold text-[15px] leading-[18.29px] text-center  py-[21px] px-[36px] rounded-full bg-primary text-dark block w-fit mx-auto border border-primary transition-all hover:text-primary hover:bg-dark'><span>Start earning</span></a>
         </div>
       </div>
 

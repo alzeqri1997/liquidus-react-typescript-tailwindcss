@@ -114,7 +114,7 @@ const AdvantageCard = ({ heading, body, link = true, componentClass = " " }: Pro
 			<p className="font-medium text-[19px] leading-[30px] opacity-50 mt-[4px] mb-[20px]">
 				{body}
 			</p>
-			{link &&<a href="#" className="btn-2 ">
+			{link &&<a href="https://docs.liquidus.finance/technical-details/wallet-app-encryption-and-security" target={'_blank'} className="btn-2 ">
 				<span className="mr-[4px]"> Read more </span>
 				<Arrow />
 			</a>}

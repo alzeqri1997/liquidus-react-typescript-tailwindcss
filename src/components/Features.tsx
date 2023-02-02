@@ -43,7 +43,7 @@ const Features = () => {
 			heading: 'Smart token & farm scanning',
 			content: 'Deposit your tokens, and Liquidus will suggest yield farming options based on your assets to maximise daily returns.',
 			href: {
-				link: '#',
+				link: 'http://liquidus.app.link/dsmexkJD1tb',
 				title:'Scan your tokens now'
 			}
 		},
@@ -52,15 +52,15 @@ const Features = () => {
 			heading: 'Expert DeFi pools suggested for you',
 			content: 'Liquidus works tirelessly to make sure that we show you the best farms based off your current holdings while showing you the best and safest APY returns.',
 			href: {
-				link: '#',
-				title:'See how it works'
+				link: 'https://play.google.com/store/apps/details?id=finance.liquidus.wallet&pli=1',
+				title:'Download today'
 			}
 		},
 		{
 			heading: 'No DeFi experience needed to benefit',
 			content: 'Liquidus is built for anyone wanting to earn passive income in the simplest way, using suggestions and smart scanning to find you the safest and most profitable options.',
 			href: {
-				link: '#',
+				link: 'https://apps.apple.com/pk/app/liquidus-defi-crypto-wallet/id1625544806',
 				title:'Download today'
 			}
 		},
@@ -170,7 +170,7 @@ const Features = () => {
 					<p className="feature-body text-[24px] opacity-50 leading-[30px] py-[24px] " >
 						{data.content}
 					</p>
-					<a href={data.href.link} className="feature-btn btn-2" >
+					<a href={data.href.link} target="_blank" className="feature-btn btn-2" >
 						<span className="mr-[4px]" > {data.href.title} </span>
 						<Arrow />
 					</a>

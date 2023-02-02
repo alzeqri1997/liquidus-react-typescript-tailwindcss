@@ -95,12 +95,12 @@ const Offers = () => {
           </div>
           <div className=' flex flex-wrap gap-[10px]' >
             {offersData.map((offer, index) => (
-              <a href='#' key={index} className="bg-[#EBEFF3] transition-colors duration-500 hover:bg-primary hover:bg-opacity-20 px-[25px] py-[18px] bg-opacity-40 rounded-[15px] grow " >
+              <a href='https://farm.liquidus.finance/' target={'_blank'} key={index} className="bg-[#EBEFF3] transition-colors duration-500 hover:bg-primary hover:bg-opacity-20 px-[25px] py-[18px] bg-opacity-40 rounded-[15px] grow " >
                 <img className='mx-auto' src={offer.image} />
                 <span className='uppercase block text-center font-semibold text-[15px] leading-[18px] mt-[11px]' >{offer.text}</span>
               </a>
             ))}
-            <a href='#' className='bg-primary transition-colors duration-500 border border-primary hover:bg-white hover:text-primary hover:border-primary flex flex-col justify-between p-[20px] rounded-[12px] grow-[2]' >
+            <a href='https://farm.liquidus.finance/' target={'_blank'} className='bg-primary transition-colors duration-500 border border-primary hover:bg-white hover:text-primary hover:border-primary flex flex-col justify-between p-[20px] rounded-[12px] grow-[2]' >
               <div>
                 <span className='block text-[22px] leading-[23px]' > Earn up to </span>
                 <span className='block text-[22px] leading-[23px]' >X APY</span>
@@ -121,7 +121,7 @@ const Offers = () => {
             <img className='w-full' src={nftCollections} />
             <div className='flex justify-between items-center mt-[13px]' >
               <span className=' font-medium text-[19px] leading-[23.16px] ' >NTF Collection</span>
-              <a href="#" className='text-[13px] leading-[16px] py-[10px] px-[12px] rounded-full bg-primary border border-primary transition-colors duration-500 hover:text-primary hover:bg-white ' >mint now</a>
+              <a href="https://farm.liquidus.finance/nft-detail/1" target={'_blank'} className='text-[13px] leading-[16px] py-[10px] px-[12px] rounded-full bg-primary border border-primary transition-colors duration-500 hover:text-primary hover:bg-white ' >mint now</a>
             </div>
           </div>
 
@@ -132,15 +132,15 @@ const Offers = () => {
               <img className='w-[50px] h-[50px]' src={tiger} alt="" />
             </div>
             <span className=' font-semibold text-[24px] leading-[29px] text-white mt-[15px] mb-[29px] block text-center' >Buy LIQ instantly</span>
-            <a href="#" className=' font-medium text-[13px] leading-[15.85px] px-[36px] py-[11px] bg-opacity-10 mx-auto w-fit block bg-white rounded-full text-white transition-colors duration-500 hover:text-secondary hover:bg-opacity-100 ' >Get started</a>
+            <a href="https://https://farm.liquidus.finance/.liquidus.finance/buyliq" target={'_blank'} className=' font-medium text-[13px] leading-[15.85px] px-[36px] py-[11px] bg-opacity-10 mx-auto w-fit block bg-white rounded-full text-white transition-colors duration-500 hover:text-secondary hover:bg-opacity-100 ' >Get started</a>
           </div>
 
           <div className='rounded-[24px] flex flex-col justify-between px-[20px] pb-[33px] pt-[21px] bg-white shadow-[0_7px_24px_rgba(51,62,91,0.165771)] grow ' >
             <span className='block text-center font-semibold text-[24px] leading-[29px] ' > join the <br /> community </span>
             <div className='flex justify-center gap-[12px]' >
-              <a href="#"><img src={instagram} /></a>
-              <a href="#"><img src={telegram} /></a>
-              <a href="#"><img src={twitter} /></a>
+              <a href="https://www.instagram.com/liquidus_finance/" target={'_blank'}><img src={instagram} /></a>
+              <a href="https://t.me/liquidusfinance" target={'_blank'}><img src={telegram} /></a>
+              <a href="https://twitter.com/LiquidusFinance" target={'_blank'}><img src={twitter} /></a>
             </div>
           </div>
         </div>
