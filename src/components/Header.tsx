@@ -90,7 +90,7 @@ const Header = () => {
         </div>
         <div className='flex items-center justify-between py-[10px]' >
           <a href="#"><img src={logo} alt="logo" /></a>
-          <button onClick={handleMobileMenu} >
+          <button className=' select-none pointer-events-auto outline-none ' onClick={handleMobileMenu} >
             <div id='nav-icon' className={`${showMobileMenu ? 'open-icon' : ''}`} >
               <span></span>
               <span></span>

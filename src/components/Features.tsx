@@ -169,19 +169,19 @@ const Features = () => {
 
   }, [])
 	return (
-		<section ref={featuresContainerRef} className="container pt-[179px]">
+		<section ref={featuresContainerRef} className="container pt-[179px] max-sm:pt-[90px]">
 			<div className="heading-container pb-[197px]">
-				<h1 className="heading-1 text-[60px] font-medium leading-[73.14px] max-lg:text-center">
+				<h1 className="heading-1 text-[60px] max-sm:text-[50px] font-medium leading-[73.14px] max-sm:leading-[65px] max-lg:text-center">
 				We take your  <strong>Security</strong>
 				</h1>
-				<h1 className="heading-2 text-[60px] font-medium leading-[73.14px] text-end max-lg:text-center">
+				<h1 className="heading-2 text-[60px] max-sm:text-[50px] font-medium leading-[73.14px] max-sm:leading-[65px] text-end max-lg:text-center">
 				very seriously at  <strong>Liquidus</strong>
 				</h1>
 			</div>
 
 			{FeaturesData.map((data, index) => (
 				<div key={index} className={`feature-container flex max-lg:flex-col-reverse items-center gap-[81px] relative ${ FeaturesData.length >index +1 ? 'mb-[180px]' : '' } ${index % 2 ===1 ? 'flex-row-reverse' : ""}  `}>
-				<div className=" w-[50%]" >
+				<div className=" w-[50%] max-sm:w-full" >
 					<h1 className="feature-heading font-bold text-[40px] leading-[48.76px] " >
 						{data.heading}
 					</h1>
@@ -196,11 +196,11 @@ const Features = () => {
 				<FeatureIcon icon={index +1 } />
 			</div>
 			))}
-			<div className="pb-[71px] pt-[224px] ">
-				<h1 className="heading1 text-[60px] font-medium leading-[73.14px] max-lg:text-center">
+			<div className="pb-[71px] pt-[224px] max-sm:pt-[100px] ">
+				<h1 className="heading1 text-[60px] leading-[73.14px] max-sm:text-[50px] max-sm:leading-[65px] font-medium  max-lg:text-center">
 					Earn up to <strong>100% APY,</strong>
 				</h1>
-				<h1 className="heading2 text-[60px] font-medium leading-[73.14px] text-end max-lg:text-center ">
+				<h1 className="heading2 text-[60px] leading-[73.14px] max-sm:text-[50px] max-sm:leading-[65px] font-medium  text-end max-lg:text-center ">
 					hassle-free with <strong>one click.</strong>
 				</h1>
 			</div>

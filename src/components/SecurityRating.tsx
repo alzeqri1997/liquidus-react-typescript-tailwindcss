@@ -162,7 +162,7 @@ const SecurityRating = () => {
   }, [elementRevealFraq])
 
   return (
-    <section ref={securityRatingContainerRef} className='container' >
+    <section ref={securityRatingContainerRef} className='container max-sm:hidden ' >
       <div className='w-full bg-[#E9FEFD] px-[54px] max-sm:px-[20px]  max-md:pb-[60px]' >
         <div className="heading pb-[70px] pt-[69px]" >
           <h1 className=' font-semibold text-[42px] max-md:text-[30px] leading-[42px] text-center text-dark opacity-50 ' >Check out our advanced  </h1>

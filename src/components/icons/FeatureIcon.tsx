@@ -18,7 +18,7 @@ type propTypes = {
 
 const Icon1 = () => (
 	<div className="feature-icon relative">
-		<div className="w-[503px] h-[503px] overflow-hidden bg-secondary rounded-[30px] relative">
+		<div className="w-[503px] max-sm:w-[350px] h-[503px] overflow-hidden bg-secondary rounded-[30px] relative">
 			<img
 				className="w-[34px] absolute top-[22px] left-[328px]"
 				src={eth}
@@ -156,7 +156,7 @@ const Icon1 = () => (
 )
 
 const Icon2 = () => (
-	<div className=" feature-icon w-[503px] h-[503px] flex items-center overflow-hidden bg-secondary rounded-[30px] relative">
+	<div className=" feature-icon w-[503px] max-sm:w-[350px] h-[503px] flex items-center overflow-hidden bg-secondary rounded-[30px] relative">
 		<img
 			className="absolute left-[50%] !translate-x-[-52%] top-[160px] "
 			src={img1}
@@ -324,7 +324,7 @@ const Icon2 = () => (
 )
 
 const Icon3 = () => (
-	<div className="feature-icon w-[503px] h-[503px] flex items-center overflow-hidden bg-secondary rounded-[30px] relative" >
+	<div className="feature-icon w-[503px] max-sm:w-[350px] h-[503px] flex items-center overflow-hidden bg-secondary rounded-[30px] relative" >
     <img className="absolute w-[34px] right-[44px] top-[224px]  " src={eth} alt="" />
     <img className="absolute top-[32px] right-[179px] w-[60px]  " src={btc} alt="" />
     <img className="absolute top-[166px] left-[161.8px]  " src={coin} alt="" />

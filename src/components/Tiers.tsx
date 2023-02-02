@@ -126,16 +126,22 @@ const Tiers = () => {
     <>
     <section ref={tiersRef} className='container pt-[107px] pb-[400px] relative' >
       <div className="heading-container pb-[197px]">
-        <h1 className="text-[60px] font-medium leading-[73.14px] max-lg:text-center">
+        <h1 className="text-[60px] max-sm:text-[50px] max-sm:leading-[65px] font-medium leading-[73.14px] max-lg:text-center">
           We take your  <strong>Security</strong>
         </h1>
-        <h1 className="text-[60px] font-medium leading-[73.14px] text-end  max-lg:text-center">
+        <h1 className="text-[60px] max-sm:text-[50px] max-sm:leading-[65px] font-medium leading-[73.14px] text-end  max-lg:text-center">
           very seriously at  <strong>Liquidus</strong>
         </h1>
       </div>
 
 
       <div className='relative tiers-card-container'>
+      <div className='flex justify-around sm:hidden mt-[20px] gap-[10px] mb-[20px]' >
+          <img onClick={() => handleClick(0)} className='tier-icon  superior z-0 absolute max-md:static top-[58%] right-[5.7%] w-[195px] max-md:w-[100px]  rotate-[15deg] cursor-pointer' src={superior} alt=" superior" />
+          <img onClick={() => handleClick(1)} className='tier-icon  gold absolute max-md:static top-[-17%] right-[12%] w-[132px] max-md:w-[100px]  rotate-[-3deg] cursor-pointer' src={gold} alt=" gold" />
+          <img onClick={() => handleClick(2)} className='tier-icon max-sm:hidden sliver absolute max-md:static top-[-10%] left-[15%] w-[102px] max-md:w-[100px]  rotate-[11.13deg]  cursor-pointer' src={silver} alt=" silver" />
+          <img onClick={() => handleClick(3)} className='tier-icon max-sm:hidden bronze absolute max-md:static top-[65.9%] left-[13%] w-[99px]  max-md:w-[100px] rotate-[-16.44deg]  cursor-pointer' src={bronze} alt=" bronze" />
+        </div>
         <TiersCard setShowTiersModal={setShowTiersModal}   currentCard={currentCard} />
         <div className='flex flex-row-reverse justify-center mt-[20px] ' >
           {cardIds.map((id: number) => (
@@ -147,11 +153,11 @@ const Tiers = () => {
           ))}
         </div>
 
-        <div className='max-md:flex max-md:justify-center max-md:mt-[20px] max-md:gap-[10px]' >
-          <img onClick={() => handleClick(0)} className='tier-icon  superior z-0 absolute max-md:static top-[58%] right-[5.7%] w-[195px] max-md:w-[100px]  rotate-[15deg] cursor-pointer' src={superior} alt=" superior" />
-          <img onClick={() => handleClick(1)} className='tier-icon  gold absolute max-md:static top-[-17%] right-[12%] w-[132px] max-md:w-[100px]  rotate-[-3deg] cursor-pointer' src={gold} alt=" gold" />
-          <img onClick={() => handleClick(2)} className='tier-icon sliver absolute max-md:static top-[-10%] left-[15%] w-[102px] max-md:w-[100px]  rotate-[11.13deg]  cursor-pointer' src={silver} alt=" silver" />
-          <img onClick={() => handleClick(3)} className='tier-icon bronze absolute max-md:static top-[65.9%] left-[13%] w-[99px]  max-md:w-[100px] rotate-[-16.44deg]  cursor-pointer' src={bronze} alt=" bronze" />
+        <div className='max-md:flex flex-wrap max-md:justify-center max-sm:justify-around max-md:mt-[20px] max-md:gap-[10px]' >
+          <img onClick={() => handleClick(0)} className='tier-icon max-sm:hidden superior z-0 absolute max-md:static top-[58%] right-[5.7%] w-[195px] max-md:w-[100px]  rotate-[15deg] cursor-pointer' src={superior} alt=" superior" />
+          <img onClick={() => handleClick(1)} className='tier-icon max-sm:hidden gold absolute max-md:static top-[-17%] right-[12%] w-[132px] max-md:w-[100px]  rotate-[-3deg] cursor-pointer' src={gold} alt=" gold" />
+          <img onClick={() => handleClick(2)} className='tier-icon max-sm:justify-around sliver absolute max-md:static top-[-10%] left-[15%] w-[102px] max-md:w-[100px]  rotate-[11.13deg]  cursor-pointer' src={silver} alt=" silver" />
+          <img onClick={() => handleClick(3)} className='tier-icon max-sm:justify-around bronze absolute max-md:static top-[65.9%] left-[13%] w-[99px]  max-md:w-[100px] rotate-[-16.44deg]  cursor-pointer' src={bronze} alt=" bronze" />
         </div>
       </div>
       </section>

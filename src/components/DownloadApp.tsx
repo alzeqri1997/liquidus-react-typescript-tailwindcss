@@ -25,7 +25,7 @@ const DownloadApp = () => {
         x: -100
       }, {
         opacity: 1,
-        x: 100
+        x: 0
       }).fromTo('.heading-right', {
         opacity: 0,
         x: 100
@@ -62,10 +62,10 @@ const DownloadApp = () => {
   return (
     <section ref={downloadAppContainerRef} className='container max-md:overflow-hidden' >
       <div className="heading-container  max-w-[565px] mx-auto">
-        <h1 className="heading-left text-[60px] font-medium leading-[73.14px]">
+        <h1 className="heading-left text-[60px] max-sm:text-[50px] max-sm:leading-[65px] font-medium leading-[73.14px] max-md:text-center">
           Get started
         </h1>
-        <h1 className="heading-right text-[60px] font-medium leading-[73.14px] text-end ">
+        <h1 className="heading-right text-[60px] max-sm:text-[50px] max-sm:leading-[65px] font-medium leading-[73.14px] text-end max-md:text-center ">
           with <strong>Liquidus</strong>
         </h1>
 

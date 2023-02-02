@@ -130,7 +130,7 @@ const FAQ = () => {
 
   return (
     <section ref={faqContainerRef} className='container pb-[180px]' >
-      <div className='faq-heading flex px-[117px] mb-[63px]' >
+      <div className='faq-heading flex px-[117px] max-md:px-0 mb-[63px]' >
         <div className=' w-2/3 ml-auto max-md:w-full' >
           <h1 className=' font-bold text-[60px] max-lg:text-[40px] leading-[73.14px mb-[20px]'>Still not sure?</h1>
           <p className=' font-normal text-[20px] leading-[24px]'>All your questions about Liquidus answered.</p>
