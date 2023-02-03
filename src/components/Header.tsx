@@ -6,7 +6,6 @@ import logo from '../assets/logo.svg'
 const mobileTl = gsap.timeline({ paused: true, reversed: true });
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
-  const [element, setElement] = useState<string>('')
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
@@ -27,18 +26,6 @@ const Header = () => {
     }, mobileMenuRef);
     return () => ctx.revert()
   }, []);
-
-  useLayoutEffect(() => {
-    function scrollToElement() {
-      if (element) {
-        gsap.to(window, {duration:2, scrollTo:{y: element, offsetY:100}, ease:"circ.inOut"})
-      }
-    }
-
-    scrollToElement()
-
-    return () => setElement('');
-  })
   
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -88,11 +75,11 @@ const Header = () => {
         <div className='header-left flex items-center' >
           <a href="/"><img src={logo} alt="logo" /></a>
           <ul className='flex ml-[30px]' >
-            <li className='text-[14px] font-medium leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href='#' onClick={()=> setElement('#farm')}>Farm</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#security')} >Security</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#features')}>Features</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#litepaper')} >Litepaper</a></li>
-            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#" onClick={()=> setElement('#tiers')}>tiers</a></li>
+            <li className='text-[14px] font-medium leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href='#farm'>Farm</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#security" >Security</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#features">Features</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#litepaper" >Litepaper</a></li>
+            <li className='text-[14px] font-medium ml-[30px] leading-[17px] transition-all hover:text-primary hover:!opacity-100'><a href="#tiers">tiers</a></li>
           </ul>
         </div>
 
@@ -148,11 +135,11 @@ const Header = () => {
           </div>
           <div>
             <ul className='flex flex-col' >
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#farm')}>Farm</a></li>
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#security')}>Security</a></li>
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#features')}>Features</a></li>
-              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#litepaper')}>Litepaper</a></li>
-              <li className='text-[14px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#" onClick={()=> setElement('#tiers')}>Tiers</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#farm" >Farm</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#security" >Security</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#features">Features</a></li>
+              <li className='text-[14px] mb-[10px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#litepaper">Litepaper</a></li>
+              <li className='text-[14px] font-medium leading-[17px] transition-colors hover:text-primary'><a href="#tiers">Tiers</a></li>
             </ul>
           </div>
 

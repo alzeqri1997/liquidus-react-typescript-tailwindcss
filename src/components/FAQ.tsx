@@ -153,7 +153,7 @@ const FAQ = () => {
       </div>
       <div className='px-[117px] max-md:px-0' >
         <div className=' w-2/3 ml-auto max-md:w-full' >
-          <a className='flex justify-between items-center text-[#9AA6CF] font-semibold text-[12px] leading-[14px] p-[8px] border rounded-[4px]' href="#">
+          <a  className='flex justify-between items-center text-[#9AA6CF] font-semibold text-[12px] leading-[14px] p-[8px] border rounded-[4px]' href="https://docs.liquidus.finance/" target={'_blank'}>
             <span>Read more documentation</span>
             <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.733398 3.94065L9.0297 3.94065" stroke="#9AA6CF" strokeLinecap="round" />

@@ -1,13 +1,9 @@
-import {useLayoutEffect, useState} from 'react'
-import {gsap} from 'gsap'
 import logo from '../assets/logo.svg'
 
-const Footer = () => {
-  const [element, setElement] = useState<string>('');
 
-  function handleScroll(element: string) {
-    gsap.to(window, { duration: 2, scrollTo: { y: element, offsetY: 100 }, ease: "circ.inOut" });
-  }
+const Footer = () => {
+
+  
   return (
     <footer className='relative z-50 bg-dark' >
       <div className='max-w-[1267px] px-[30px] pt-[63px] pb-[21px] mx-auto ' >
@@ -49,9 +45,9 @@ const Footer = () => {
 
             <ul className='flex justify-end max-xs:justify-between' >
               <li className='text-[14px] font-medium leading-[10px] text-center'><a href="http://liquidus.app.link/dsmexkJD1tb" target={'_blank'}>App</a></li>
-              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#" onClick={()=> handleScroll('#farm')}>Farm</a></li>
-              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#" onClick={()=> handleScroll('#litepaper')}>Roadmap</a></li>
-              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#" onClick={()=> handleScroll('#features')}>Features</a></li>
+              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#farm" >Farm</a></li>
+              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#litepaper">Roadmap</a></li>
+              <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#features" >Features</a></li>
               <li className='text-[14px] font-medium ml-[60px] max-xs:ml-[10px] leading-[10px] text-center'><a href="https://docs.liquidus.finance/about-liquidus/the-liquidus-company" target={'_blank'} >About</a></li>
             </ul>
 

@@ -125,16 +125,16 @@ const Features = () => {
 					duration:.7
 				},
 				scrollTrigger: {
-					trigger: '.heading1',
+					trigger: '.heading-container ',
 					start: 'top 70%',
 				}
-			}).fromTo('.heading1', {
+			}).fromTo('.heading-1', {
 				opacity: 0,
 				x:-100
 			}, {
 				opacity: 1,
 				x:0
-			}).fromTo('.heading2', {
+			}).fromTo('.heading-2', {
 				opacity: 0,
 				x:100
 			}, {

@@ -13,7 +13,6 @@ import Clients2 from './components/Clients2'
 import SecurityRating from './components/SecurityRating'
 import Tiers from './components/Tiers'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import ScrollToPlugin from 'gsap/dist/ScrollToPlugin'
 import Clouds2 from './components/Clouds2'
 import Cards from './components/Cards'
 import Offers from './components/Offers'
@@ -26,7 +25,6 @@ function App() {
   const app = useRef<HTMLDivElement>(null)
 
   gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(ScrollToPlugin)
 
 
   useLayoutEffect(() => {
