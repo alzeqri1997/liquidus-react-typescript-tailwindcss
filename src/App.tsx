@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from 'react'
+import { useRef, useLayoutEffect, useEffect, useState } from 'react'
 import './App.css'
 import BigText from './components/BigText'
 import Clients from './components/Clients'
@@ -19,13 +19,39 @@ import Offers from './components/Offers'
 import FAQ from './components/FAQ'
 import DownloadApp from './components/DownloadApp'
 import Footer from './components/Footer'
-
+import { PriceService } from './api/PriceService'
 function App() {
 
-  const app = useRef<HTMLDivElement>(null)
+  const app = useRef<HTMLDivElement>(null);
+  const [liqPrice, setLiqPrice] = useState<number>(0);
+  const [maxApy, setMaxApy] = useState<number>(0)
+  const [totalFarmValue, setTotalFarmValue] = useState<string>('0')
+
+  const priceService = new PriceService()
 
   gsap.registerPlugin(ScrollTrigger);
 
+  const retrieveLiqPrice = async () => {
+    const response = await priceService.getLiqPrice('liq-price');
+    setLiqPrice(response.data.toFixed(2) )
+  }
+
+  const retrieveMaxApy = async () => {
+    const response = await priceService.getLiqPrice('max-apy');
+    setMaxApy(Math.floor(response.data))
+  }
+
+  const retrieveTotalFarmValue = async () => {
+    const response = await priceService.getLiqPrice('total-locked');
+    setTotalFarmValue(Math.floor(response.data).toLocaleString("en-US"))
+  }
+
+  useEffect(() => {
+    const retrieve = async () => {
+      await Promise.all([retrieveLiqPrice(), retrieveMaxApy(), retrieveTotalFarmValue()])
+    }
+    retrieve()
+  }, []);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -137,7 +163,7 @@ function App() {
 
   return (
     <div ref={app} className="App">
-      <Header />
+      <Header liqPrice={liqPrice} />
       <Hero />
       <Clients />
       <BigText text='Crypto earning unlike any app you have used before' />
@@ -154,7 +180,7 @@ function App() {
       <BigText text='Greek Gods might be a myth...' />
       <Cards />
       <div className='bg-white text-dark' >
-        <Offers />
+        <Offers maxApy={maxApy} totalFarmValue={totalFarmValue} />
         <FAQ />
         <DownloadApp />
       </div>

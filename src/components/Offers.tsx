@@ -25,7 +25,7 @@ const offersData: OffersDataType[] = [
 ]
 
 
-const Offers = () => {
+const Offers = ({maxApy, totalFarmValue}: {maxApy: number, totalFarmValue:string}) => {
 
   const offersContainer = useRef<HTMLDivElement>(null)
 
@@ -91,7 +91,7 @@ const Offers = () => {
         <div className="farms-container mt-[78px] py-[29px] px-[31px] rounded-[30px] bg-white shadow-[0_7px_24px_rgba(51,62,91,0.165771)]" >
           <div className="flex justify-between items-center mb-[50px]" >
             <h4 className=' font-semibold text-[30px] leading-[36.57px]' >Our Farms</h4>
-            <span className=' font-normal text-[15px] leading-[18.29px]' >TVL: 1,981,483</span>
+            <span className=' font-normal text-[15px] leading-[18.29px]' >TVL: {totalFarmValue}</span>
           </div>
           <div className=' flex flex-wrap gap-[10px]' >
             {offersData.map((offer, index) => (
@@ -103,7 +103,7 @@ const Offers = () => {
             <a href='https://farm.liquidus.finance/' target={'_blank'} className='bg-primary transition-colors duration-500 border border-primary hover:bg-white hover:text-primary hover:border-primary flex flex-col justify-between p-[20px] rounded-[12px] grow-[2]' >
               <div>
                 <span className='block text-[22px] leading-[23px]' > Earn up to </span>
-                <span className='block text-[22px] leading-[23px]' >X APY</span>
+                <span className='block text-[22px] leading-[23px]' >{maxApy}% APY</span>
               </div>
               <div className='flex'>
                 <div className='grow'></div>

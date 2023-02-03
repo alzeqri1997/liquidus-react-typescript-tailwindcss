@@ -4,7 +4,7 @@ import logo from '../assets/logo.svg'
 
 
 const mobileTl = gsap.timeline({ paused: true, reversed: true });
-const Header = () => {
+const Header = ({ liqPrice }:{liqPrice: number}) => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
 
@@ -86,7 +86,7 @@ const Header = () => {
         <div className='header-right' >
           <a className=' inline-block  py-[12px] px-[16px] font-medium text-[12px] rounded-[4px] text-[#040618] bg-primary transition-colors hover:text-dark hover:bg-white' href="https://farm.liquidus.finance/" target={'_blank'}>Farm</a>
 
-          <a className=' inline-block py-[12px] px-[16px] font-medium text-[12px] rounded-[4px] text-[#040618] bg-[#ffff] ml-[8px] transition-colors hover:bg-primary' href="https://coinmarketcap.com/de/currencies/liquidus/" target={'_blank'}>LIQ $1.32</a>
+          <a className=' inline-block py-[12px] px-[16px] font-medium text-[12px] rounded-[4px] text-[#040618] bg-[#ffff] ml-[8px] transition-colors hover:bg-primary' href="https://coinmarketcap.com/de/currencies/liquidus/" target={'_blank'}>LIQ ${liqPrice}</a>
         </div>
       </div>
 
