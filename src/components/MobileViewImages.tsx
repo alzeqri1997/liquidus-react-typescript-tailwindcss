@@ -64,10 +64,10 @@ const MobileViewImages = (props : propTypes) => {
   }, [mobileId, timeline])
 
   return (
-    <div ref={imgContainerRef} className='flex d w-fit mx-auto mb-[90px]' >
-      <img ref={img1} className='img-1 w-[213px]  scale-[0.8]' src={mobileImg1} alt="mobile version ios app-store" />
-      <img ref={img2} className='img-2 w-[213px] ml-[-110px] scale-[0.8] ' src={mobileImg2} alt="mobile version ios app-store" />
-      <img ref={img3} className='img-3 w-[213px] ml-[-130px] scale-[0.8] ' src={mobileImg3} alt="mobile version ios app-store" />
+    <div ref={imgContainerRef} className='flex images-container d w-fit mx-auto mb-[90px]' >
+      <img ref={img1} className='img-1 w-[213px] max-sm:w-[190px]  scale-[0.8]' src={mobileImg1} alt="mobile version ios app-store" />
+      <img ref={img2} className='img-2 w-[213px] max-sm:w-[190px] ml-[-110px] scale-[0.8] ' src={mobileImg2} alt="mobile version ios app-store" />
+      <img ref={img3} className='img-3 w-[213px] max-sm:w-[190px] ml-[-130px] scale-[0.8] ' src={mobileImg3} alt="mobile version ios app-store" />
     </div>
   )
 }
