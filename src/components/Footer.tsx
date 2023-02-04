@@ -52,11 +52,11 @@ const Footer = () => {
             </ul>
 
             <ul className='flex mt-[21px]' >
-              <li className='text-[10px] opacity-50 font-medium leading-[10px] text-center'><a href="#">Cookie Policy</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Privacy Policy</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Terms & Conditions</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Risk Disclaimer</a></li>
-              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="#">Terms of use</a></li>
+              <li className='text-[10px] opacity-50 font-medium leading-[10px] text-center'><a href="https://docs.liquidus.finance/about-liquidus/legal" target={'_blank'}>Cookie Policy</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="https://docs.liquidus.finance/about-liquidus/legal" target={'_blank'}>Privacy Policy</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="https://docs.liquidus.finance/about-liquidus/legal" target={'_blank'}>Terms & Conditions</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="https://docs.liquidus.finance/about-liquidus/legal" target={'_blank'}>Risk Disclaimer</a></li>
+              <li className='text-[10px] opacity-50 font-medium ml-[30px] max-xs:ml-[10px] leading-[10px] text-center'><a href="https://docs.liquidus.finance/about-liquidus/legal" target={'_blank'}>Terms of use</a></li>
             </ul>
           </div>
         </div>
