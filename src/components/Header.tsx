@@ -13,7 +13,9 @@ const Header = ({ liqPrice }:{liqPrice: number}) => {
       const elements = gsap.utils.toArray(mobileMenuRef.current?.querySelectorAll('div') as NodeList);
       mobileTl.fromTo(mobileMenuRef.current, {
         opacity: 0,
+        display:'none'
       }, {
+        display:'unset',
         opacity: 1,
       }).fromTo(elements, {
         x: 100,
