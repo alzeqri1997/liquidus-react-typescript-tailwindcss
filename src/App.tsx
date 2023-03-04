@@ -1,5 +1,4 @@
 import { useRef, useLayoutEffect, useEffect, useState } from 'react'
-import './App.css'
 import BigText from './components/BigText'
 import Clients from './components/Clients'
 import Header from './components/Header'
